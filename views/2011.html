@@ -1,0 +1,165 @@
+<?
+require ('config.php');
+$id='2011';
+if (!$note) {
+	$note="一年，365天，8760小时，525600分，31536000秒，一晃，就过去了，似乎什么也没学会，似乎什么也没留下，或许，这就是生活";
+	$note1="一年，<br>365天，<br>8760小时，<br>525600分，<br>31536000秒，<br>一晃，<br>就过去了，<br><br>似乎什么也没学会，<br>似乎什么也没留下，<br><br>日子就这么平平淡淡的溜走，<br>是呀，<br>时间都去哪儿了？";
+} else {
+	if (strlen($from)>=6) {
+	  $note=urldecode($note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	} else {
+	  $note=urldecode($note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	}
+	if ($t=="ss") {
+	  $note=iconv("utf-8","gb2312",$note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	}
+}
+?>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+	<meta name="viewport" content="width=500px, height=750px, initial-scale=0.64" /> 
+
+	<title>时间都去哪儿了</title>	
+	<script src="img/2011_files/jquery-1.10.2.min.js"></script>
+	<style type="text/css">
+
+	<!--		
+		body
+		{
+			margin: 0;
+		}	
+
+div#foot{   
+        position:fixed; 
+		left:320px;
+		bottom:10px;
+        z-index:4000;
+    } 	
+		
+	-->
+
+    </style>	
+	<script>
+		gSizeMode = 'bodywidth';
+		gAnimateMode = 'up';
+		gSound = 'sound/shijiandouqunaerle.mp3';
+		gColor = '#4B1B11';
+		gTextAreaLeft = 0.30;
+		gTextAreaTop = 0.07;
+		gTextAreaWidth = 0.65;
+		gTextAreaHeight = 0.4;
+		gSpeed = 300;		
+		gCardTextNoWrap ='' ||'<?=$note?>';
+		gCardText ='' ||'<?=$note1?>';
+
+		 share_url='';
+		
+		gShareLogo = '<?=$page_url?>img/home/<?=$id?>.jpg';
+        gShareUrl = '<?=$page_url?><?=$id?>.php?note=<?=urlencode($note)?>';
+        gShareTitle = '时间都去哪儿了？';
+        ShareDesc = '<?=$note?>';
+		goptiontxt = "xinqing";
+	</script>
+<script>
+        
+</script>	
+<script src="../public/js/showcard_nosound.js?d=1"></script>
+<script src="../public/js/showcard_weixin.js?t=<?=time()?>"></script>
+<div id="audiocontainer"></div>
+<div id="cardsound" style="position: fixed; left: 440px; top: 40px; z-index: 5000; visibility: visible;"></div>
+ 	<script src="img/2011_files/jquery.canvasClock.js"></script>
+</head>
+
+<body  onload="onLoad();laysound();"  bgcolor="#000">	
+	
+	<div style="position:absolute;top:0;left:0;width:500px;z-index:0">
+		<img src="img/2011_files/2011_1.jpg"/>
+	</div>
+	
+	<div style="position:absolute;top:400px;left:193px;z-index:1" class='canvas-clock' data-bg-img-url='img/2011_files/2011_biao.png'></div>
+	<script type="text/javascript">
+		jQuery(document).ready(function(){
+			jQuery('.canvas-clock').canvasClock({brandName: ''});
+		});
+	</script>
+	
+	
+
+	
+	
+	<div id="ruler" style="width:100%;height:0"></div>
+	<div id="textsuper" style="position:absolute;top:-1000;left:-1000;overflow-x:hidden;overflow-y:hidden;z-index:4" onclick='javascript:playsound()'>
+		<div id="textsub" style='color:black;line-height:80pt;position:relative;font-size:20pt;text-align:left;line-height:28pt' onclick='javascript:playsound()'>
+			<b id="textcontent">
+			</b>
+		</div>
+	</div>
+<script type="text/javascript">	
+var imgUrl = gShareLogo;
+var lineLink = gShareUrl;
+var descContent = ShareDesc;
+var shareTitle = gShareTitle;
+var appid = '';
+function shareFriend() {
+			playbksound();
+            WeixinJSBridge.invoke('sendAppMessage',{
+                "appid": appid,
+                "img_url": imgUrl,
+                "img_width": "200",
+                "img_height": "200",
+                "link": lineLink,
+                "desc": descContent,
+                "title": shareTitle
+            }, function(res) {
+                location.href = "<?=$weixin_url?>";
+            })
+        }
+        function shareTimeline() {
+            WeixinJSBridge.invoke('shareTimeline',{
+                "img_url": imgUrl,
+                "img_width": "200",
+                "img_height": "200",
+                "link": lineLink,
+                "desc": descContent,
+                "title": shareTitle
+            }, function(res) {
+                   location.href = "<?=$weixin_url?>";
+            });
+        }
+        function shareWeibo() {
+            WeixinJSBridge.invoke('shareWeibo',{
+                "content": descContent,
+                "url": lineLink,
+            }, function(res) {
+                location.href = "<?=$weixin_url?>";
+            });
+        }
+        // 当微信内置浏览器完成内部初始化后会触发WeixinJSBridgeReady事件。
+        document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+            // 发送给好友
+            WeixinJSBridge.on('menu:share:appmessage', function(argv){
+                shareFriend();
+            });
+            // 分享到朋友圈
+            WeixinJSBridge.on('menu:share:timeline', function(argv){
+                shareTimeline();
+            });
+            // 分享到微博
+            WeixinJSBridge.on('menu:share:weibo', function(argv){
+                shareWeibo();
+            });
+        }, false); 
+</script>
+<?
+require ('footer.php');
+?>

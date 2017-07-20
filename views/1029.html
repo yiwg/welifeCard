@@ -1,0 +1,229 @@
+<?
+require ('config.php');
+$id='1029';
+if (!$note) {
+	$note="平凡而渺小的三叶草，默默地、倔强的生长着，它却是幸福的使者: 一片叶子代表着爱，一片叶子代表着健康，一片叶子代表着希望，因为有爱，所以一定要健康、幸福的过一辈子！";
+	$note1="平凡而渺小的三叶草，<br>默默地、倔强的生长着，<br>它却是幸福的使者: <br>一片叶子代表着爱，<br>一片叶子代表着健康，<br>一片叶子代表着希望，<br>因为有爱，<br>所以一定要健康、<br>幸福的过一辈子！";
+} else {
+	if (strlen($from)>=6) {
+	  $note=urldecode($note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	} else {
+	  $note=urldecode($note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	}
+	if ($t=="ss") {
+	  $note=iconv("utf-8","gb2312",$note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	}
+}
+?>
+<html>  
+<head>
+<meta http-equiv="content-type" content="text/html; charset=gb2312">  
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=500px, height=750px,initial-scale=0.64" /> 
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<script src="jquery.min.js"></script>
+<title>送给你</title>  
+
+
+<style type="text/css">  
+    <!--   
+    body{   
+		-webkit-touch-callout: none; 
+		-webkit-text-size-adjust: none;
+        margin:0 auto;   		
+        overflow:hidden;   
+		position:relative;
+		background-color:black;
+    }   
+  
+    div#content{
+        position:relative;   
+        border:1px solid #000; 
+		width:500px;		
+		height:750px;
+		margin:0 auto; 
+        top:0px;    
+        overflow:hidden;   
+        clear:both;
+    }
+  
+    div#bg{   
+        position:absolute;   
+        left:0px;   
+        top:0px;
+    } 
+	
+	div#bg2{   
+        position:absolute;   
+        left:0px;   
+        top:50px;
+		-webkit-animation:fadeIn1 10s 0.2s infinite ease-in-out alternate both;
+    } 
+	@-webkit-keyframes fadeIn1{
+		0%{opacity:0.4;}
+		20%{opacity:0.2;}
+		40%{opacity:0.1;}
+		60%{opacity:0;}
+		80%{opacity:0;}
+		100%{opacity:0;}
+	}
+	div#bg3{   
+        position:absolute;   
+        left:0px;   
+        top:0px;
+		-webkit-animation:fadeIn2 16s 0.2s infinite ease-in-out alternate both;
+    } 
+	@-webkit-keyframes fadeIn2{
+		0%{opacity:0;}
+		20%{opacity:0.6;}
+		40%{opacity:0.2;}
+		60%{opacity:0.1;}
+		80%{opacity:0;}
+		100%{opacity:0;}
+	}
+	div#bg4{   
+        position:absolute;   
+        left:0px;   
+        top:0px;
+		-webkit-animation:fadeIn3 16s 0.2s infinite ease-in-out alternate both;
+    }
+	@-webkit-keyframes fadeIn3{
+		0%{opacity:0;}
+		20%{opacity:0;}
+		40%{opacity:0.6;}
+		60%{opacity:0.2;}
+		80%{opacity:0.1;}
+		100%{opacity:0;}
+	}	
+	div#taiyang{   
+        position:absolute;   
+        left:70px;   
+        top:-5px;
+		-webkit-backface-visibility:visible;
+		-webkit-transform-origin:55px 0px;
+		-webkit-animation:swing 8s 0.2s infinite linear alternate both;
+    }
+	@-webkit-keyframes swing{
+		20%,40%,60%,80%,100%{-webkit-transform-origin:top center}
+		20%{-webkit-transform:rotate(15deg)}
+		40%{-webkit-transform:rotate(-15deg)}
+		60%{-webkit-transform:rotate(15deg)}
+		80%{-webkit-transform:rotate(-15deg)}
+		100%{-webkit-transform:rotate(0deg)}
+		}	
+	div#stars
+	{ 
+		position:absolute; 
+		width:450px;
+		height:-50px;
+		left:50px
+		top:200px;
+		z-index:2000;
+	}
+	#stars img{ position:absolute }
+	div#foot{   
+        position:fixed;   
+        bottom:30px;   
+        right:30px;
+    }
+    -->  
+</style>  
+<script>
+	gSizeMode = 'bodywidth';
+	gAnimateMode = 'print';
+	gSound = 'sound/muqinjie.mp3';
+	gColor = '#F8A901';
+	gTextAreaLeft = 0.1;
+	gTextAreaTop = 0.2;
+	gTextAreaWidth = 0.6;
+	gTextAreaHeight = 0.4;
+	gSpeed = 400;		
+	gCardTextNoWrap ='' ||'<?=$note?>';
+	gCardText ='' ||'<?=$note1?>';
+	 share_url='';
+	
+	gShareLogo = '<?=$page_url?>img/home/<?=$id?>.jpg';
+            gShareUrl = '<?=$page_url?><?=$id?>.php?note=<?=urlencode($note)?>';
+            gShareTitle = '送给你';
+            gShareDesc = '<?=$note?>';
+	
+	</script>
+
+<script src="../public/js/showcard_nosound.js?d=1"></script>
+<script src="../public/js/showcard_weixin.js?d=1"></script>
+<div id="audiocontainer"></div>
+<div id="cardsound" style="position: fixed; left: 440px; top: 40px; z-index: 5000; visibility: visible;"></div>
+ 
+ 
+<script>
+	//需要调用leafinit（）来启动，需要声明外层div，id="container"，还有内层div，id="leafContainer"
+	//参数设置
+	var leafNum = 6;			//落下叶子的数量
+	var kindNum = 1;			//叶子的种类
+	//叶子使用图片地址，数量应与kindNum相同
+	var kindurl = new Array("img/1029_files/1029_p2.png");
+</script>
+<script src="img/1029_files/fleaves.min.js"></script>
+<link rel="stylesheet" href="img/1029_files/leavesGeneral.css" type="text/css" media="screen" charset="utf-8">
+
+<script>
+function showTxt()
+		{
+			var text = document.getElementById("textsuper");
+			text.style.display = "block";
+			onLoad();
+		}
+</script>
+</head>  
+<body onLoad = "showTxt();">  
+    <div id="content">  
+		 <div id="bg" >
+			<img src="img/1029_files/1029_1.jpg"/>
+		</div> 
+		<div id="bg2">
+			<img src="img/1029_files/1029_2.png"/>
+		</div> 	
+		<div id="bg3">
+			<img src="img/1029_files/1029_3.png"/>
+		</div> 	
+		<div id="bg4">
+			<img src="img/1029_files/1029_4.png"/>
+		</div> 
+		<div id="taiyang">
+			<img src="img/1029_files/1029_taiyang.png"/>
+		</div> 
+		
+		<div id="container" onClick="clickbg();" style="left:0%;top:0%;">
+			<div id="leafContainer"></div>
+		</div>
+		<script>
+			leafinit();
+		</script>
+		
+        
+	
+
+
+<div id="ruler" style="width:100%;height:0"></div>
+<div id="textsuper" style="position:absolute;top:-1000;left:-1000;overflow-x:hidden;overflow-y:hidden;z-index:4000">
+	<div id="textsub" style='color:black;position:relative;font-size:18pt;text-align:left;line-height:36pt' >
+		<b id="textcontent">
+        </b>
+    </div>
+</div>
+
+
+<?
+require ('footer.php');
+?>

@@ -1,0 +1,79 @@
+<?
+require ('config.php');
+$id='1008';
+if (!$note) {
+	$note="人生忙碌，日子酸甜;缘份简简单单，感情真真切切;联系断断续续，惦记却是时时刻刻，contact！！";
+	$note1="人生忙碌，日子酸甜；<br>缘份简简单单，<br>感情真真切切；<br>联系断断续续，<br>惦记却是时时刻刻；<br>contact！";
+} else {
+	if (strlen($from)>=6) {
+	  $note=urldecode($note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	} else {
+	  $note=urldecode($note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	}
+	if ($t=="ss") {
+	  $note=iconv("utf-8","gb2312",$note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	}
+}
+?>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+    
+
+    <title>有空常联系</title>
+
+	<script>
+		
+		 
+		gSizeMode = 'bodywidth';
+		gAnimateMode = 'print';
+		gSound = 'sound/qingyinyue1.mp3'
+		gColor = '#3f2b16';
+		gTextAreaLeft = 0.0762;
+		gTextAreaTop = 0.4;
+		gTextAreaWidth = 0.8;
+		gTextAreaHeight = 0.45;		
+		gCardTextNoWrap ='' ||'<?=$note?>';
+		gCardText ='' ||'<?=$note1?>';
+
+gShareLogo = '<?=$page_url?>img/home/<?=$id?>.jpg';
+            gShareUrl = '<?=$page_url?><?=$id?>.php?note=<?=urlencode($note)?>';
+            gShareTitle = '有空常联系';
+            gShareDesc = '<?=$note?>';
+
+	</script>
+
+</head>
+<<script src="../public/js/showcard_nosound.js?d=1"></script>
+<script src="../public/js/showcard_weixin.js?d=1"></script>
+<div id="audiocontainer"></div>
+<div id="cardsound" style="position: fixed; left: 440px; top: 40px; z-index: 5000; visibility: visible;"></div>
+ 
+ <body onLoad="onLoad();">
+<img src="img/1008_files/139579812785.gif" width="100%">
+
+
+
+<div id="ruler" style="width:100%;height:0"></div>
+<div id="textsuper" style="position: absolute; top: 210px; left: 40.005px; overflow: hidden; z-index: 4; height: 236.25px; width: 420px;" onClick="javascript:playsound()">
+	<div id="textsub" style="color: black; line-height: 80pt; position: relative; font-size: 60px; top: -506px;" onClick="javascript:playsound()">
+		<b id="textcontent" style="color: rgb(63, 43, 22);"><?=$note1?></b>
+    </div>
+</div>
+
+
+
+	
+
+ 
+<?
+require ('footer.php');
+?>

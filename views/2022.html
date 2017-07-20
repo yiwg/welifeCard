@@ -1,0 +1,229 @@
+<?
+require ('config.php');
+$id='2022';
+if (!$note) {
+	$note="一场秋雨一场凉，出门记得加衣裳！季节交替，谨防感冒哦~！";
+	$note1="一场秋雨一场凉，<br>出门记得加衣裳！<br>季节交替，<br>谨防感冒哦~<br>！";
+} else {
+	if (strlen($from)>=6) {
+	  $note=urldecode($note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	} else {
+	  $note=urldecode($note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	}
+	if ($t=="ss") {
+	  $note=iconv("utf-8","gb2312",$note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	}
+}
+?>
+<html>  
+<head>
+<meta http-equiv="content-type" content="text/html; charset=gb2312">  
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=500px, height=750px, initial-scale=0.64" /> 
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<script src="jquery.min.js"></script>
+<title>砖墙里的心里话</title>  
+
+
+<script src="img/2027_files/fontcard.js?d=<?=time()?>"></script>
+<style type="text/css">  
+    <!--   
+    body{   
+		-webkit-touch-callout: none; 
+		-webkit-text-size-adjust: none;
+        margin:0 auto;   		
+        overflow:hidden;   
+		position:relative;
+    }   
+  
+    div#content{
+        position:relative;   
+        border:1px solid #000; 
+		width:500px;		
+		height:750px;
+		margin:0 auto; 
+        top:0px;    
+        overflow:hidden;   
+        clear:both;
+    }
+  
+    div#bg{   
+        position:absolute;   
+        left:0px;   
+        top:0px;
+    } 
+	div#teng{   
+        position:absolute;   
+        left:273px;   
+        top:-12px;
+		opacity:0;
+		-webkit-transform-origin:center center;
+		
+    } 
+	@-webkit-keyframes fadeInUp{
+		0%{opacity:0;
+		-webkit-transform:translateY(-20px)}
+		100%{opacity:1;
+		-webkit-transform:translateY(0)}
+		}
+	div#zi{   
+        position:absolute;  
+		opacity:0;
+        left:45px;   
+        top:150px;
+		-webkit-transform-origin:center center;
+    } 
+	
+	@-webkit-keyframes fadeInDown{
+		0%{opacity:0;
+		-webkit-transform:translateY(20px)}
+		100%{opacity:1;
+		-webkit-transform:translateY(0)}
+		}
+		
+	div#shuming{   
+        position:absolute;   
+        left:0px;   
+        top:0px;
+		-webkit-transform-origin:center centers;
+		
+    } 
+	@-webkit-keyframes tada{
+		0%{-webkit-transform:scale(1)}
+		10%,20%{-webkit-transform:scale(0.9) rotate(-3deg)}
+		30%,50%,70%,90%{-webkit-transform:scale(1.1) rotate(3deg)}
+		40%,60%,80%{-webkit-transform:scale(1.1) rotate(-3deg)}
+		100%{-webkit-transform:scale(1) rotate(0)}
+		}
+		
+	div#foot{   
+                position:fixed; 
+        		left:340px;
+        		bottom:20px;				
+				z-index:10000;
+            } 	
+    -->  
+</style>  
+<script>
+	gSizeMode = 'bodywidth';
+	gAnimateMode = 'up';	
+	 gSound = 'sound/duanwu2.mp3';
+	gColor = '#ffff99';
+	gTextAreaLeft = 0.1;
+	gTextAreaTop = 0.1;
+	gTextAreaWidth = 0.8;
+	gTextAreaHeight = 0.35;
+	gSpeed = 400;		
+	gCardTextNoWrap ='';
+	gCardText ='' ||'<?=$note1?>';
+	
+	share_url='';
+    g_font_name = "xmjy";
+    g_words = gCardText;
+    g_font_size = 40;
+    g_color = "ffff99";
+    g_gap = 25;
+    g_width_c = 8;
+    g_date = "20141006";
+    g_text_x = 30;
+    g_text_y = 212;
+    g_text_w = 450;
+    g_text_h = 210;
+    g_speed = 40;
+	
+	
+	
+	        gShareLogo = '<?=$page_url?>img/home/<?=$id?>.jpg';
+            gShareUrl = '<?=$page_url?><?=$id?>.php?note=<?=urlencode($note)?>';
+            gShareTitle = '砖墙里的话儿';
+            gShareDesc = '<?=$note?>';
+	
+	gcardid = 2022;
+	goptiontxt = "zhufu1";
+	</script>
+
+<script src="../public/js/showcard_nosound.js?d=1"></script>
+<script src="../public/js/showcard_weixin.js?d=1"></script>
+<div id="audiocontainer"></div>
+<div id="cardsound" style="position: fixed; left: 440px; top: 40px; z-index: 5000; visibility: visible;"></div>
+ 
+ 
+<script>
+	//需要调用leafinit（）来启动，需要声明外层div，id="container"，还有内层div，id="leafContainer"
+	//参数设置
+	var leafNum = 10;			//落下叶子的数量
+	var kindNum = 2;			//叶子的种类
+	//叶子使用图片地址，数量应与kindNum相同
+	var kindurl = new Array("img/2022_files/2022_np4.png","img/2022_files/2022_np2.png");
+</script>
+<script src="img/2022_files/fleaves.min.js"></script>
+<link rel="stylesheet" href="img/2022_files/leavesGeneral.css" type="text/css" media="screen" charset="gb2312">
+
+<script>
+	var clickNum = 0;
+	function showTxt()
+		{
+			var text = document.getElementById("textsuper");
+			text.style.display = "block";
+			loadFontImg();
+		}
+		
+	function clickwall(){
+		if(clickNum > 0) {
+			return;
+		}else{
+			clickNum ++;
+			document.getElementById("shuming").style.display = "none";
+			leafinit();
+			document.getElementById("teng").style.webkitAnimation = "fadeInUp 2s 1s 1 ease-in-out  both";
+			document.getElementById("zi").style.webkitAnimation = "fadeInDown 2s 0.5s 1 ease-in-out  both";
+		}
+	}
+</script>
+</head>  
+<body onLoad="showTxt()">  
+		<div id="content">  
+			
+        <div id="bg" >
+			<img onClick="clickwall()" src="img/2022_files/2022_n1.jpg"/>
+		</div>  
+		<div id="shuming" style="z-index:5001;">
+			<img onClick="clickwall()" src="img/2022_files/2022_n2.png"/>
+		</div>
+		<div id="zi">
+			<img id="fontimg" />
+		</div>
+		<div id="teng">
+			<img src="img/2022_files/2022_n3.png"/>
+		</div>
+		
+		
+		<div id="container" onClick="clickbg();" style="left:0%;top:0%;">
+			<div id="leafContainer"></div>
+		</div>
+		
+		
+       
+
+
+<div id="ruler" style="width:100%;height:0"></div>
+<div id="textsuper" style="position:absolute;top:-1000;left:-1000;overflow-x:hidden;overflow-y:hidden;z-index:4000;">
+	<div id="textsub" style='color:black;position:relative;font-size:20pt;line-height:36pt' >
+	
+    </div>
+</div>
+
+<?
+require ('footer.php');
+?>

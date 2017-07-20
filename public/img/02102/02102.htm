@@ -1,0 +1,217 @@
+<html>
+  <head>
+    	    <meta http-equiv="imagetoolbar" content="no">
+    <meta name="viewport" content="width=500px, height=750px,initial-scale=0.64"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+        
+    <style type="text/css">
+      body{   
+        -webkit-touch-callout: none; 
+        -webkit-text-size-adjust: none;
+        margin:0 auto;       
+        overflow:hidden;   
+        position:relative;      
+        background:black;
+      }   
+      
+      div#content{
+        position:relative;   
+        border:1px solid #000; 
+        width:500px;    
+        height:750px;
+        margin:0 auto; 
+        top:0px;    
+        overflow:hidden;   
+        clear:both;
+      }
+    </style>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "hm.js-79ffbbf29b9cad4cdead888d9557190e"/*tpa=http://hm.baidu.com/hm.js?79ffbbf29b9cad4cdead888d9557190e*/;
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    <script>
+      gTextSizeMode = 'img';
+      gTextAnimateMode = 'print';
+      gTextColor = '#000000';
+  		gTextAreaLeft = 0.05;
+  		gTextAreaTop = 0.0;
+  		gTextAreaWidth = 0.9;
+  		gTextAreaHeight = 0.7;
+      gTextSpeed = 550;  
+      gTextDesc ='冬天来了，<br>寒冷侵袭，<br>保重身体；<br>调整作息，<br>快乐心理；<br>烦恼忘记，<br>幸福相依。<br>';
+      
+      gSoundUrl = 'http://www.kagirl.net/kas/sound/tiaopi1.mp3';
+
+      gShareLogo = '02102.jpg'/*tpa=http://weika.sinaapp.com/img/home/02102.jpg*/;
+      gShareUrl = location.href;
+      gShareTitle = '送给你';
+      gShareDesc = '冬天来了，寒冷侵袭，保重身体；调整作息，快乐心理；烦恼忘记，幸福相依。';
+
+    </script>
+  </head>
+
+  <body style="margin:0; height: 100%" onload="showText();">  
+    <div id="content" width="100%">
+      <section class="container">
+  			<div id="slider">
+  				<img src="139581576944.jpg" tppabs="http://weika.sinaapp.com/img/02102/139581576944.jpg" alt="">
+  				<img src="139581577024.jpg" tppabs="http://weika.sinaapp.com/img/02102/139581577024.jpg" alt="">
+  				<img src="139581577096.jpg" tppabs="http://weika.sinaapp.com/img/02102/139581577096.jpg" alt="">
+  				<img src="139581577166.jpg" tppabs="http://weika.sinaapp.com/img/02102/139581577166.jpg" alt="">				
+  				<img src="139581576714.jpg" tppabs="http://weika.sinaapp.com/img/02102/139581576714.jpg" alt="">
+  			</div>
+		  </section>
+      <div id="cardimg">
+        <img src="paper.jpg" tppabs="http://weika.sinaapp.com/img/02102/paper.jpg" top="317px" width="100%">
+      </div>
+    
+    	<script src="jquery.min.js" tppabs="http://weika.sinaapp.com/js/jquery.min.js" type="text/javascript"></script>
+    	<script src="flux.js" tppabs="http://weika.sinaapp.com/js/flux.js" type="text/javascript" charset="utf-8"></script>	
+    	<script type="text/javascript">
+			$(function(){
+				if(!flux.browser.supportsTransitions)
+					alert("您的手机不支持该动画");
+					
+				window.f = new flux.slider('#slider', {
+					pagination: false,
+					delay: 3500,
+					controls: false,
+					transitions: ['concentric'],
+					autoplay: true
+				});
+			});
+    	</script> 
+            <div id="ruler" style="width:100%;height:0"></div>
+      <div id="audiocontainer"> </div>
+      
+      <div id="textsuper" style="position:absolute;top:-1000;left:-1000;overflow-x:hidden;overflow-y:hidden;z-index:2000" >
+        <div id="textsub" style="color:black;position:relative;font-size:21pt;text-align:left;line-height:40pt;top:2000px" >
+        </div>
+      </div>
+
+      <script src="sa_card.js" tppabs="http://weika.sinaapp.com/js/sa_card.js" type="text/javascript"></script>
+      
+        <style>
+#card_menu {
+  z-index: 8000; 
+  background-color: transparent;
+  background-size: 101px 101px!important;
+  position: fixed;
+  left: 0px;
+  bottom: 31px;
+  height: 101px;
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+#card_menu.fade { 
+  -webkit-animation: menu_fade_animation 5s infinite linear; 
+  -moz-animation: menu_fade_animation 5s infinite linear; 
+  -ms-animation: menu_fade_animation 5s infinite linear; 
+  -o-animation: menu_fade_animation 5s infinite linear; 
+  animation: menu_fade_animation 5s infinite linear;
+}
+
+#card_menu.hide {
+  bottom: -60px!important; opacity: 0; 
+  transition: all 666ms;
+  -moz-transition: all 666ms;
+  -webkit-transition: all 666ms;
+  -o-transition: all 666ms; 
+} 
+
+@-webkit-keyframes menu_fade_animation{ 0%{ opacity: 0.8; } 50%{ opacity: 0.2; } 100%{ opacity: 0.8; } } 
+@-moz-keyframes menu_fade_animation{ 0%{ opacity: 0.8; } 50%{ opacity: 0.2; } 100%{ opacity: 0.8; } } 
+@-ms-keyframes menu_fade_animation{ 0%{ opacity: 0; } 50%{ opacity: 1; } 100%{ opacity: 0; } } 
+@-o-keyframes menu_fade_animation{ 0%{ opacity: 0.8; } 50%{ opacity: 0.2; } 100%{ opacity: 0.8; } } 
+@keyframes menu_fade_animation{ 0%{ opacity: 0.8; } 50%{ opacity: 0.2; } 100%{ opacity: 0.8; } } 
+
+.menu_scale_animation { 
+  -webkit-animation: menu_scale_animation 910ms infinite linear; 
+  -moz-animation: menu_scale_animation 910ms infinite linear; 
+  -ms-animation: menu_scale_animation 910ms infinite linear; 
+  -o-animation: menu_scale_animation 910ms infinite linear; 
+  animation: menu_scale_animation 910ms infinite linear; 
+} 
+@-webkit-keyframes menu_scale_animation{ 0%{ -webkit-transform : scale(0.9); opacity: 0.6; } 100%{ -webkit-transform : scale(1.2); opacity: 0; } } 
+@-moz-keyframes menu_scale_animation{ 0%{ -moz-transform : scale(0.9); opacity: 0.6; } 100%{ -moz-transform : scale(1.2); opacity: 0; } } 
+@-ms-keyframes menu_scale_animation{ 0%{ -ms-transform : scale(0.9); opacity: 0.6; } 100%{ -ms-transform : scale(1.2); opacity: 0; } } 
+@-o-keyframes menu_scale_animation{ 0%{ -o-transform : scale(0.9); opacity: 0.6; } 100%{ -o-transform : scale(1.2); opacity: 0; } } 
+ 
+.menu_btn {
+  border-radius: 100%;
+  display: inline-block;
+  width: 101px;
+  height: 101px;
+  bottom: 31px;
+  margin: 0 8px;
+}
+        </style> 
+
+      <div id="card_menu" class="fade"> 
+              <div onclick="Follow();" class="menu_btn" style="background: url(http://weika.sinaapp.com/img/ext/menu_sendback.png);background-size:contain;"></div> 
+            </div>
+      <div id="shareTips" style="background-color: rgba(0, 0, 0, 0.7); z-index: 8100;display: none">
+        <img class="send_arrow" src="share_tips.png" tppabs="http://weika.sinaapp.com/img/ext/share_tips.png"> 
+      </div>
+      <style> 
+        #shareTips{
+          position:absolute; 
+          top:0; 
+          left:0; 
+          height:0; 
+          bottom:0; 
+          width:100%; 
+          height:100%; 
+          background:rgba(0, 0, 0, 0.70); 
+          overflow:hidden;
+        }
+        #shareTips img{
+          position:absolute; 
+          top:5px; 
+          right:5px; 
+          width:284px; 
+          height:110px;
+        } 
+      </style> 
+<script>
+function Customize()
+{
+  id('card_menu').className = "hide";
+  setTimeout(function(){location.href = "http://weika.sinaapp.com/card/editcard/02102"}, 600);
+}
+
+function Share()
+{
+  id('card_menu').className = "hide";
+  id('shareTips').style.display="block";
+  id('shareTips').onclick = function(){
+    id('shareTips').style.display="none";
+    id('shareTips').onclick = function(){};
+    id('card_menu').className = "fade";
+  }    
+}
+
+function Follow()
+{
+  location.href = 'http://mp.weixin.qq.com/s?__biz=MjM5NzEwNTkyNg==&mid=200015411&idx=1&sn=717d35a105c86c924be7240dc30a1525#rd';
+}
+
+function GetMore()
+{
+  location.href = 'http://weika.sinaapp.com/page/home';
+}
+
+</script>    </div>
+  </body>
+</html>

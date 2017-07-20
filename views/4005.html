@@ -1,0 +1,311 @@
+<?
+require ('config.php');
+$id='4005';
+if (!$note) {
+	$note="当你看到这条短信息，恭喜你，你已经从99个竞争者中脱颖而出，你赢得了我的爱，要出来庆祝一下吗?愚人节快乐!";
+	$note1="当你看到这条短信息，<br>恭喜你，<br>你已经从99个竞争者中脱颖而出，<br>你赢得了我的爱，<br>要出来庆祝一下吗?<br>愚人节快乐!<br>";
+} else {
+	if (strlen($from)>=6) {
+	  $note=urldecode($note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	} else {
+	  $note=urldecode($note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	}
+	if ($t=="ss") {
+	  $note=iconv("utf-8","gb2312",$note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	}
+}
+?>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+	<meta name="viewport" content="width=500px, height=750px,initial-scale=0.64" /> 
+
+	<title>特别的礼物</title>	
+	<script src="jquery.min.js"></script>
+    <style type="text/css">
+
+	<!--
+		.myButton {
+			-moz-box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+			-webkit-box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+			box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+			background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #79bbff), color-stop(1, #378de5));
+			background:-moz-linear-gradient(top, #79bbff 5%, #378de5 100%);
+			background:-webkit-linear-gradient(top, #79bbff 5%, #378de5 100%);
+			background:-o-linear-gradient(top, #79bbff 5%, #378de5 100%);
+			background:-ms-linear-gradient(top, #79bbff 5%, #378de5 100%);
+			background:linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#79bbff', endColorstr='#378de5',GradientType=0);
+			background-color:#79bbff;
+			-moz-border-radius:14px;
+			-webkit-border-radius:14px;
+			border-radius:14px;
+			border:1px solid #84bbf3;
+			display:inline-block;
+			cursor:pointer;
+			color:#ffffff;
+			font-family:arial;
+			font-size:30px;
+			font-weight:bold;
+			padding:6px 24px;
+			text-decoration:none;
+			text-shadow:0px 1px 0px #528ecc;
+		}
+		
+		#layer2{
+			position:absolute; 
+			left:0px;
+			top:0px;
+			z-index:11;			
+			display:none;
+		}
+		 @-webkit-keyframes bounceInDown{
+			0%{opacity:0; -webkit-transform:translateY(-2000px)}
+			100%{-webkit-transform:translateY(0)}			
+			}
+			
+		 @-webkit-keyframes move1{
+			0%{
+				left:268px;
+				top:348px;
+			}
+			100%{
+				left:20px;
+				top:90px;			
+			}
+			}
+			
+		 @-webkit-keyframes move2{
+			0%{
+				left:268px;
+				top:348px;
+			}
+			100%{
+				left:268px;
+				top:348px;	
+			}
+			}
+		 @-webkit-keyframes move3{
+			0%{
+				left:268px;
+				top:348px;
+			}
+			100%{
+				left:120px;
+				top:500px;
+			}
+			}
+			
+		@-webkit-keyframes tada{
+			    0%{-webkit-transform:scale(1)}
+				10%,20%{-webkit-transform:scale(0.9) rotate(-3deg)}
+				30%,50%,70%,90%{-webkit-transform:scale(1.1) rotate(3deg)}
+				40%,60%,80%{-webkit-transform:scale(1.1) rotate(-3deg)}
+				100%{-webkit-transform:scale(1) rotate(0)}
+		}
+		
+		@-webkit-keyframes flipInX{
+			0%{-webkit-transform:perspective(400px) rotateX(90deg);
+			opacity:0}
+			40%{-webkit-transform:perspective(400px) rotateX(-10deg)}
+			70%{-webkit-transform:perspective(400px) rotateX(10deg)}
+			100%{-webkit-transform:perspective(400px) rotateX(0deg);
+			opacity:1}
+			}
+	
+	-->
+
+    </style>	
+	<script>
+		gSizeMode = 'bodywidth';
+		gAnimateMode = 'up';
+		gSound = '../music/sound/1395990646866138022.mp3';
+		gColor = '#cc0000';
+		gTextAreaLeft = 0.2;
+		gTextAreaTop = 1.0;
+		gTextAreaWidth = 0.6;
+		gTextAreaHeight = 0.4;
+		gSpeed = 400;		
+		
+			gCardText='' ||'<?=$note1?>'; 
+			share_url='';
+		
+		gShareLogo = '<?=$page_url?>img/home/<?=$id?>.jpg';
+            gShareUrl = '<?=$page_url?><?=$id?>.php?note=<?=urlencode($note)?>';
+            gShareTitle = '送给你';
+            gShareDesc = '<?=$note?>';	
+		
+		</script>
+	
+	<script src="../public/js/showcard_nosound.js?d=1"></script>
+<script src="../public/js/showcard_weixin.js?d=1"></script>
+<div id="audiocontainer"></div>
+<div id="cardsound" style="position: fixed; left: 440px; top: 40px; z-index: 5000; visibility: visible;"></div>
+ 
+ 	
+	<script>
+		function clickf1(){					
+			var f2 = document.getElementById("f2");
+			f2.style.display = "block";
+			//f2.style.webkitAnimation = "flipInX 1s .2s ease both";
+			
+			var f1 = document.getElementById("f1");
+			f1.style.display = "none";
+			
+			var g1 = document.getElementById("g1");
+			g1.style.display = "block";
+			g1.style.webkitAnimation = "move1 0.2s 0.2s ease both, tada 1s 0.4s infinite ease both";
+			
+			var g2 = document.getElementById("g2");
+			g2.style.display = "block";
+			g2.style.webkitAnimation = "move2 0.2s 0.2s ease both, tada 1s 0.3s infinite ease both";
+			
+			var g3 = document.getElementById("g3");
+			g3.style.display = "block";
+			g3.style.webkitAnimation = "move3 0.2s 0.2s ease both, tada 1s 0.35s infinite ease both";
+		}
+		
+		function clickg1(){
+			/*
+			var g1 = document.getElementById("g1");
+			g1.style.display = "none";
+			
+			var g2 = document.getElementById("g2");
+			g2.style.display = "none";
+			
+			var g3 = document.getElementById("g3");
+			g3.style.display = "none";
+			*/
+			var r1 = document.getElementById("r1");
+			r1.style.display = "block";
+						
+			setTimeout("showTxt()",2500);
+			
+			setTimeout("showBack()",4000);
+			
+		}
+		
+		function clickg2(){
+			/*
+			var g1 = document.getElementById("g1");
+			g1.style.display = "none";
+			
+			var g2 = document.getElementById("g2");
+			g2.style.display = "none";
+			
+			var g3 = document.getElementById("g3");
+			g3.style.display = "none";
+			*/
+			var r2 = document.getElementById("r2");
+			r2.style.display = "block";
+						
+			setTimeout("showTxt()",2000);
+			setTimeout("showBack()",3500);
+		}
+		
+		function clickg3(){
+			/*
+			var g1 = document.getElementById("g1");
+			g1.style.display = "none";
+			
+			var g2 = document.getElementById("g2");
+			g2.style.display = "none";
+			
+			var g3 = document.getElementById("g3");
+			g3.style.display = "none";
+			*/
+			var r3 = document.getElementById("r3");
+			r3.style.display = "block";
+			var ir3 = document.getElementById("ir3");
+			ir3.src="139614848252.gif";
+					
+			setTimeout("showTxt()",3000);
+			setTimeout("showBack()",4500);
+		}
+		
+		function showTxt(){
+			var text = document.getElementById("textsuper");
+			text.style.display = "block";
+			onLoad();
+		}
+		
+		function showBack(){
+			var bd = document.getElementById("backdiv");
+			bd.style.display = "block";
+		}
+		
+		function showMenu(){
+			var r1 = document.getElementById("r1");
+			r1.style.display = "none";
+			var r2 = document.getElementById("r2");
+			r2.style.display = "none";
+			var r3 = document.getElementById("r3");
+			r3.style.display = "none";
+			var text = document.getElementById("textsuper");
+			text.style.display = "none";
+			var bd = document.getElementById("backdiv");
+			bd.style.display = "none";
+		}
+		
+	</script>
+
+
+</head>
+
+<body bgcolor="#000">
+
+	<div id="f1" onClick="clickf1();" style="position:absolute;left:0;top:0;z-index:0">
+		<img src="img/4005_files/139597619637.gif" width="500px"/>
+	</div>
+	
+	<div id="f2" style="display:none;position:absolute;left:0;top:0;z-index:1">
+		<img src="img/4005_files/139597619818.jpg" width="500px"/>
+	</div>
+	
+	<div id="g1" onClick="clickg1();" style="display:none;position:absolute;left:20px;top:90px;z-index:2">
+		<img src="img/4005_files/139614554047.png" width="204px"/>
+	</div>
+	<div id="g2" onClick="clickg2();" style="display:none;position:absolute;left:268px;top:348px;z-index:2">
+		<img src="img/4005_files/139614554047.png" width="204px"/>
+	</div>
+	<div id="g3" onClick="clickg3();" style="display:none;position:absolute;left:120px;top:500px;z-index:2">
+		<img src="img/4005_files/139614554047.png" width="204px"/>
+	</div>
+	
+	<div id="r1" style="display:none;position:absolute;left:0;top:0;z-index:3">
+		<img id="ir1" src="img/4005_files/139597620181.gif" width="500px"/>
+	</div>
+	<div id="r2" style="display:none;position:absolute;left:0;top:0;z-index:3">
+		<img id="ir2" src="img/4005_files/139614831265.gif" width="500px"/>
+	</div>
+	<div id="r3" style="display:none;position:absolute;left:0;top:0;z-index:3">
+		<img id="ir3" width="500px"/>
+	</div>
+	
+	<div id="backdiv" style="display:none;position:absolute;left:36px;top:36px;z-index:3" onClick="showMenu();">
+		<img src="img/4005_files/139623509848.png"/>
+	</div>
+	
+	
+	
+
+
+<div id="ruler" style="width:100%;height:0"></div>
+<div id="textsuper" style="position:absolute;display:none;top:-1000;left:-1000;overflow-x:hidden;overflow-y:hidden;z-index:4" onclick='javascript:playsound()'>
+	<div id="textsub" style='color:black;line-height:80pt;position:relative;font-size:24pt;text-align:left;line-height:32pt' onclick='javascript:playsound()'>
+		<b id="textcontent">
+        </b>
+    </div>
+</div>
+<?
+require ('footer.php');
+?>

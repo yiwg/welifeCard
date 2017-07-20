@@ -1,0 +1,289 @@
+<?
+require ('config.php');
+$id='3005';
+if (!$note) {
+	$note="亲爱的，今天是情人节，又是元宵节，想和你一起看月亮慢慢升起，然后说声：我爱你！";
+	$note1="亲爱的，<br>今天是情人节，<br>又是元宵节，<br>想和你一起看月亮慢慢升起，<br>然后说声：我爱你！";
+} else {
+	if (strlen($from)>=6) {
+	  $note=urldecode($note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	} else {
+	  $note=urldecode($note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	}
+	if ($t=="ss") {
+	  $note=iconv("utf-8","gb2312",$note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	}
+}
+?>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+	<meta name="viewport" content="width=500px, height=750px,initial-scale=0.64" /> 
+
+	<title>陪你看月亮</title>	
+	<script src="jquery.min.js"></script>
+    <style type="text/css">
+
+	<!--
+		body{
+			background:#000000;
+			margin:0 auto;
+		}
+			
+		#stars{ 
+			width:450px;
+			height:400px;
+			position:absolute; 
+			left:0;
+			top:0;
+			z-index:1000;
+		}
+		#stars img{ position:absolute }
+		
+		#layer0{
+			position:absolute; 
+			left:0px;
+			top:0px;
+			z-index:0;
+			-webkit-animation:fadeInUpBig 7s 0.2s ease both;
+		}
+		
+		 @-webkit-keyframes fadeInUpBig{
+			0%{opacity:0;
+			-webkit-transform:translateY(2000px)}
+			100%{opacity:1;
+			-webkit-transform:translateY(0)}
+		}
+		
+		div#foot{   
+        position:fixed; 
+		left:320px;
+		bottom:10px;
+        z-index:4000;
+    } 		
+	-->
+
+    </style>	
+	<script>
+		gSizeMode = 'bodywidth';
+		gAnimateMode = 'print';
+		gSound = 'sound/woyuanyi.mp3';
+		gColor = '#032063';
+		gTextAreaLeft = 0.12;
+		gTextAreaTop = 0.05;
+		gTextAreaWidth = 0.85;
+		gTextAreaHeight = 0.6;
+		gSpeed = 300;		
+		gCardTextNoWrap ='' ||'<?=$note?>';
+	gCardText ='' ||'<?=$note1?>';
+share_url='';
+		
+		gShareLogo = '<?=$page_url?>img/home/<?=$id?>.jpg';
+            gShareUrl = '<?=$page_url?><?=$id?>.php?note=<?=urlencode($note)?>';
+            gShareTitle = '陪你看月亮';
+            gShareDesc = '<?=$note?>';
+			
+		gcardid = 9312;
+		goptiontxt = "yuanxiao";
+	</script>
+	
+	<script src="../public/js/showcard_nosound.js?d=1"></script>
+		<script src="../public/js/showcard_weixin.js?d=1"></script>
+<div id="audiocontainer"></div>
+<div id="cardsound" style="position: fixed; left: 440px; top: 40px; z-index: 5000; visibility: visible;"></div>
+ 
+ 		
+		<script>
+			function showTxt()
+			{
+				var text = document.getElementById("textsuper");
+				text.style.display = "block";
+				setTimeout("onLoad();",100);
+			}
+		</script>
+		
+	</head>
+<div id="audiocontainer"></div>
+<div id="cardsound" style="position: fixed; left: 440px; top: 40px; z-index: 5000; visibility: visible;"></div>
+ 
+ 
+	<script>
+	function randomInteger(low, high)
+	{
+		return low + Math.floor(Math.random() * (high - low));
+	}
+
+	function starshine(){
+		var num=20;
+		for(var i=0;i<num;i++)
+		{
+			var posL=Math.random()*$('#stars').width()+'px';
+			var posT=Math.random()*$('#stars').height()+'px';
+			$('#stars').append("<img src='img/3005/jinxingxing1.png' id='star"+i+"' style=\'"+"left:"+posL+";top:"+posT+"\'/>");
+		}
+		
+		$("#stars img").each(function(){
+			dark($(this).attr("id"));
+		});
+	}
+
+	function dark(name){
+		   $("#"+name+"").animate({opacity:'0.2'},randomInteger(1000,2000),function(){light(name)});
+	}
+	function light(name){
+		$("#"+name+"").animate({opacity:'1'},randomInteger(1000,3000),function(){dark(name)});
+	}
+	</script>
+</head>
+
+<body bgcolor="#000" onLoad="onLoad();">
+	<div id="stars"></div>
+	<script>
+		starshine();
+	</script>
+<div id="layer0" style="position:absolute;left:0;top:0;z-index:0">
+	<img src="img/3005/3005_yueliang.png"/>
+</div>
+
+<div style="position:absolute;left:0;top:0;z-index:1">
+	<img src="img/3005/3005_ren.png" width="500px"/>
+</div>
+
+
+ 
+<div id="ruler" style="width:100%;height:0"></div>
+<div id="textsuper" style="position:absolute;top:-1000;left:-1000;overflow-x:hidden;overflow-y:hidden;z-index:4000">
+	<div id="textsub" style='color:black;position:relative;font-size:22pt;text-align:left;line-height:36pt' >
+		<b id="textcontent">
+        </b>
+    </div>
+</div>
+
+        
+
+
+	<style>
+#card_menu {
+  z-index: 8000; 
+  background-color: transparent;
+  background-size: 101px 101px!important;
+  position: fixed;
+  left: 0px;
+  bottom: 31px;
+  height: 101px;
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+#card_menu.fade { 
+  -webkit-animation: menu_fade_animation 5s infinite linear; 
+  -moz-animation: menu_fade_animation 5s infinite linear; 
+  -ms-animation: menu_fade_animation 5s infinite linear; 
+  -o-animation: menu_fade_animation 5s infinite linear; 
+  animation: menu_fade_animation 5s infinite linear;
+}
+
+#card_menu.hide {
+  bottom: -60px!important; opacity: 0; 
+  transition: all 666ms;
+  -moz-transition: all 666ms;
+  -webkit-transition: all 666ms;
+  -o-transition: all 666ms; 
+} 
+
+@-webkit-keyframes menu_fade_animation{ 0%{ opacity: 0.8; } 50%{ opacity: 0.2; } 100%{ opacity: 0.8; } } 
+@-moz-keyframes menu_fade_animation{ 0%{ opacity: 0.8; } 50%{ opacity: 0.2; } 100%{ opacity: 0.8; } } 
+@-ms-keyframes menu_fade_animation{ 0%{ opacity: 0; } 50%{ opacity: 1; } 100%{ opacity: 0; } } 
+@-o-keyframes menu_fade_animation{ 0%{ opacity: 0.8; } 50%{ opacity: 0.2; } 100%{ opacity: 0.8; } } 
+@keyframes menu_fade_animation{ 0%{ opacity: 0.8; } 50%{ opacity: 0.2; } 100%{ opacity: 0.8; } } 
+
+.menu_scale_animation { 
+  -webkit-animation: menu_scale_animation 910ms infinite linear; 
+  -moz-animation: menu_scale_animation 910ms infinite linear; 
+  -ms-animation: menu_scale_animation 910ms infinite linear; 
+  -o-animation: menu_scale_animation 910ms infinite linear; 
+  animation: menu_scale_animation 910ms infinite linear; 
+} 
+@-webkit-keyframes menu_scale_animation{ 0%{ -webkit-transform : scale(0.9); opacity: 0.6; } 100%{ -webkit-transform : scale(1.2); opacity: 0; } } 
+@-moz-keyframes menu_scale_animation{ 0%{ -moz-transform : scale(0.9); opacity: 0.6; } 100%{ -moz-transform : scale(1.2); opacity: 0; } } 
+@-ms-keyframes menu_scale_animation{ 0%{ -ms-transform : scale(0.9); opacity: 0.6; } 100%{ -ms-transform : scale(1.2); opacity: 0; } } 
+@-o-keyframes menu_scale_animation{ 0%{ -o-transform : scale(0.9); opacity: 0.6; } 100%{ -o-transform : scale(1.2); opacity: 0; } } 
+ 
+.menu_btn {
+  border-radius: 100%;
+  display: inline-block;
+  width: 101px;
+  height: 101px;
+  bottom: 31px;
+  margin: 0 8px;
+}
+        </style> 
+
+      <div id="card_menu" class="fade"> 
+              <div onclick="Customize();" class="menu_btn" style="background: url(<?=$page_url?>img/ext/menu_customize.png);background-size:contain;"></div> 
+        <div onclick="Share();" class="menu_btn" style="background: url(<?=$page_url?>img/ext/menu_share.png);background-size:contain;"></div> 
+        <div onclick="GetMore();" class="menu_btn" style="background: url(<?=$page_url?>img/ext/menu_more.png);background-size:contain;"></div> 
+            </div>
+      <div id="shareTips" style="background-color: rgba(0, 0, 0, 0.7); z-index: 8100;display: none">
+        <img class="send_arrow" src="<?=$page_url?>img/ext/share_tips.png"> 
+      </div>
+      <style> 
+        #shareTips{
+          position:absolute; 
+          top:0; 
+          left:0; 
+          height:0; 
+          bottom:0; 
+          width:100%; 
+          height:100%; 
+          background:rgba(0, 0, 0, 0.70); 
+          overflow:hidden;
+        }
+        #shareTips img{
+          position:absolute; 
+          top:5px; 
+          right:5px; 
+          width:284px; 
+          height:110px;
+        } 
+      </style> 
+<script>
+function Customize()
+{
+  id('card_menu').className = "hide";
+  setTimeout(function(){location.href = "<?=$page_url?>editcard.php?id=<?=$id?>"}, 600);
+}
+
+function Share()
+{
+  id('card_menu').className = "hide";
+  id('shareTips').style.display="block";
+  id('shareTips').onclick = function(){
+    id('shareTips').style.display="none";
+    id('shareTips').onclick = function(){};
+    id('card_menu').className = "fade";
+  }    
+}
+
+function Follow()
+{
+  location.href = '<?=$weixin_url?>';
+}
+
+function GetMore()
+{
+  location.href = '<?=$page_url?>index.php';
+}
+
+</script>    </div>
+  </body>
+</html>

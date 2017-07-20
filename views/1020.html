@@ -1,0 +1,197 @@
+<?
+require ('config.php');
+$id='1020';
+if (!$note) {
+	$note="春雨悠然，笑语嫣然<br>雨水淋漓，心情欣喜<br>雨帘绵长，春韵悠长<br>青春尽情飞扬，<br>点燃胸中梦想，<br>向着美好明天，<br>幸福快乐起航！";
+	$note1="春雨悠然，笑语嫣然<br>雨水淋漓，心情欣喜<br>雨帘绵长，春韵悠长<br>青春尽情飞扬，<br>点燃胸中梦想，<br>向着美好明天，<br>幸福快乐起航！";
+} else {
+	if (strlen($from)>=6) {
+	  $note=urldecode($note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	} else {
+	  $note=urldecode($note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	}
+	if ($t=="ss") {
+	  $note=iconv("utf-8","gb2312",$note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	}
+}
+?>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=500px, height=750px,initial-scale=0.64" /> 
+
+	<title>春雨悠然</title>	
+	<script src="img/1020_files/jquery.min.js"></script>
+	
+    <style type="text/css">
+
+	<!--
+		#bg img {border:0px;} 
+		#yu img {border:0px;} 
+		#bg {
+			position:absolute;
+			left:0;
+			top:0;
+			z-index:0;
+		}
+		#yu {
+			position:absolute;
+			left:0;
+			top:0;
+			z-index:3;
+		}
+		#woniu{
+			-webkit-animation:moveleft 80s 0.2s ease both;
+		}
+		
+		#woniuke{
+			-webkit-animation:kemoveleft 80s 1.7s ease both; 
+		}
+						
+	    @-webkit-keyframes moveleft
+		{
+			0%{	left:0px; } 
+			2%{	left:15px;} 4%{	left:15px;}
+			6%{	left:30px;} 8%{ left:30px;}
+			10%{left:45px;} 12%{left:45px;}
+			14%{left:60px;} 16%{left:60px;}
+			18%{left:75px;}	20%{left:75px;}
+			22%{left:90px;}	24%{left:90px;}
+			26%{left:105px;} 28%{left:105px;}
+			30%{	left:120px;}	32%{left:120px;}
+			34%{	left:135px;}	36%{left:135px;}
+			38%{	left:150px;}	40%{left:150px;}
+			42%{	left:165px;}	44%{left:165px;}
+			46%{	left:180px;}	48%{left:180px;}
+			50%{	left:195px;}	52%{left:195px;}
+			54%{	left:210px;}	56%{left:210px;}
+			58%{	left:225px;}	60%{left:220px;}			
+			62%{	left:240px;}	64%{left:240px;}
+			66%{	left:255px;}	68%{left:255px;}
+			70%{	left:270px;}	72%{left:270px;}
+			74%{	left:285px;}	76%{left:285px;}
+			78%{	left:300px;}	80%{left:300px;}
+			82%{	left:315px;}	84%{left:315px;}
+			86%{	left:330px;}	88%{left:330px;}
+			90%{	left:345px;}	92%{left:345px;}
+			94%{	left:360px;}	96%{left:360px;}
+			98%{	left:375px;}	100%{left:375px;}
+		}
+		@-webkit-keyframes kemoveleft
+		{
+			0%{	left:0px; } 
+			2%{	left:15px;} 4%{	left:15px;}
+			6%{	left:30px;} 8%{ left:30px;}
+			10%{left:45px;} 12%{left:45px;}
+			14%{left:60px;} 16%{left:60px;}
+			18%{left:75px;}	20%{left:75px;}
+			22%{left:90px;}	24%{left:90px;}
+			26%{left:105px;} 28%{left:105px;}
+			30%{	left:120px;}	32%{left:120px;}
+			34%{	left:135px;}	36%{left:135px;}
+			38%{	left:150px;}	40%{left:150px;}
+			42%{	left:165px;}	44%{left:165px;}
+			46%{	left:180px;}	48%{left:180px;}
+			50%{	left:195px;}	52%{left:195px;}
+			54%{	left:210px;}	56%{left:210px;}
+			58%{	left:225px;}	60%{left:220px;}			
+			62%{	left:240px;}	64%{left:240px;}
+			66%{	left:255px;}	68%{left:255px;}
+			70%{	left:270px;}	72%{left:270px;}
+			74%{	left:285px;}	76%{left:285px;}
+			78%{	left:300px;}	80%{left:300px;}
+			82%{	left:315px;}	84%{left:315px;}
+			86%{	left:330px;}	88%{left:330px;}
+			90%{	left:345px;}	92%{left:345px;}
+			94%{	left:360px;}	96%{left:360px;}
+			98%{	left:375px;}	100%{left:375px;}
+		}
+		
+		
+		 @-webkit-keyframes moveleft1
+		 {
+			0%{opacity:1;-webkit-transform:translateX(20)}
+			50%{opacity:1;	-webkit-transform:translateX(30)}	
+			100%{opacity:1;	-webkit-transform:translateX(40)}			
+		}
+		@-webkit-keyframes kemoveleft1
+		 {
+			0%{opacity:1;-webkit-transform:translateX(20)}
+			50%{opacity:1;	-webkit-transform:translateX(30)}	
+			100%{opacity:1;	-webkit-transform:translateX(40)}			
+		}
+	-->
+
+    </style>	
+	<script>
+		gSizeMode = 'bodywidth';
+		gAnimateMode = 'up';
+		gSound = 'sound/xiayu.mp3';
+		gColor = '#003300';
+		gTextAreaLeft = 0.01;
+		gTextAreaTop = 0.13;
+		gTextAreaWidth = 0.99;
+		gTextAreaHeight = 0.4;
+		gSpeed = 400;		
+		gCardTextNoWrap ='';
+		gCardText ='' ||'<?=$note1?>';
+	share_url='';
+			// script place
+		
+		gShareLogo = '<?=$page_url?>img/home/<?=$id?>.jpg';
+            gShareUrl = '<?=$page_url?><?=$id?>.php?note=<?=urlencode($note)?>';
+            gShareTitle = '送给你';
+            gShareDesc = '<?=$note?>';	
+		// card tips
+		gcardid = 1020;
+		goptiontxt = "xinqing";
+		</script>
+	
+	<script src="../public/js/showcard_nosound.js?d=1"></script>
+<script src="../public/js/showcard_weixin.js?d=1"></script>
+<div id="audiocontainer"></div>
+<div id="cardsound" style="position: fixed; left: 440px; top: 40px; z-index: 5000; visibility: visible;"></div>
+ 
+ 	
+
+</head>
+
+<body bgcolor="#000" onLoad="onLoad();">
+	
+	<div id="bg"> 
+		<img src="img/1020_files/1020_1.jpg" width="100%"/>
+	</div> 
+	
+	<div id="woniu" style="position:absolute;left:0px;top:525;z-index:1;">
+		<img src="img/1020_files/1020_woniu.png"/>
+	</div>
+	
+	<div id="woniuke" style="position:absolute;left:0px;top:525px;z-index:2;">
+		<img src="img/1020_files/1020_woniuke.png"/>
+	</div>
+	<div id="yu"> 
+		<img src="img/1020_files/1020_yu.gif" width="100%"/>
+	</div> 
+	
+
+	
+	<div id="ruler" style="width:100%;height:0"></div>
+	<div id="textsuper" style="position:absolute;top:-1000;left:-1000;overflow-x:hidden;overflow-y:hidden;z-index:4" onclick='javascript:playsound()'>
+		<div id="textsub" style='color:black;line-height:80pt;position:relative;font-size:20pt;text-align:center;line-height:32pt' onclick='javascript:playsound()'>
+			<b id="textcontent">
+			</b>
+		</div>
+	</div>
+	
+	<?
+require ('footer.php');
+?>

@@ -1,0 +1,141 @@
+<?
+require ('config.php');
+$id='2008';
+if (!$note) {
+	$note="不要总在过去的回忆里缠绵，昨天的太阳，晒不干今天的衣裳。";
+	$note1="不要总在过去的回忆里缠绵<br>昨天的太阳<br>晒不干今天的衣裳";
+} else {
+	if (strlen($from)>=6) {
+	  $note=urldecode($note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	} else {
+	  $note=urldecode($note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	}
+	if ($t=="ss") {
+	  $note=iconv("utf-8","gb2312",$note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	}
+}
+?>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+	
+	<meta name="viewport" content="width=500px;height=750px;user-scalable=no"> 
+
+	<title>时光荏苒</title>	
+	<script src="img/2008_files/jquery.min.js"></script>
+    <style type="text/css">
+
+	<!--
+			
+		body{
+			margin:0;
+			
+		}
+		#stars{ 
+			width:230px;
+			height:500px;
+			position:absolute; 
+			left:0;
+			top:0;
+			z-index:1;
+		}
+		#stars img{ position:absolute }
+	
+	-->
+
+    </style>
+
+	
+	<script src="img/2008_files/showcard_nosound.js"></script>
+	<script>
+		gSizeMode = 'bodywidth';
+		gAnimateMode = 'print';
+		gSound = 'sound/qingyinyue5.mp3';
+		gColor = '#ff6600';
+		gTextAreaLeft = 0.0762;
+		gTextAreaTop = 0.1;
+		gTextAreaWidth = 0.85;
+		gTextAreaHeight = 0.45;
+		gSpeed = 400;		
+		gCardTextNoWrap ='' ||'<?=$note?>';
+		gCardText ='' ||'<?=$note1?>';
+	
+
+		gShareLogo = '<?=$page_url?>img/home/<?=$id?>.jpg';
+            gShareUrl = '<?=$page_url?><?=$id?>.php?note=<?=urlencode($note)?>';
+            gShareTitle = '樱桃贺卡微卡';
+            gShareDesc = '<?=$note?>';
+	</script>
+	
+<script src="../public/js/showcard_nosound.js?d=1"></script>
+<script src="../public/js/showcard_weixin.js?d=1"></script>
+<div id="audiocontainer"></div>
+<div id="cardsound" style="position: fixed; left: 440px; top: 40px; z-index: 5000; visibility: visible;"></div>
+ 
+ 
+<script>
+function randomInteger(low, high)
+{
+    return low + Math.floor(Math.random() * (high - low));
+}
+
+$(document).ready(function(){
+	var num=20;
+	for(var i=0;i<num;i++)
+	{
+		var posL=Math.random()*$('#stars').width()+'px';
+		var posT=Math.random()*$('#stars').height()+'px';
+		$('#stars').append("<img src='img/2008_files/xx2008_"+randomInteger(1,4)+".png' id='star"+i+"' style=\'"+"left:"+posL+";top:"+posT+"\'/>");
+	}
+	
+	$("#stars img").each(function(){
+		dark($(this).attr("id"));
+	});
+	onLoad();
+});
+
+function dark(name){
+       $("#"+name+"").animate({opacity:'0'},randomInteger(1000,2000),function(){light(name)});
+}
+function light(name){
+    $("#"+name+"").animate({opacity:'0.9'},randomInteger(1000,2000),function(){dark(name)});
+}
+
+</script>
+
+
+
+</head>
+
+<body bgcolor="#111111">
+
+<div style="position:absolute;left:0;top:0;z-index:0">
+	<img src="img/2008_files/139582307172.jpg" width="100%">
+</div>
+
+<div id="stars"></div>
+
+
+
+<div id="ruler" style="width:100%;height:0"></div>
+<div id="textsuper" style="position: absolute; top: 59.800000000000004px; left: 45.5676px; overflow: hidden; z-index: 4; height: 269.1px; width: 508.3px;" onClick="javascript:playsound()">
+	<div id="textsub" style="color: black; position: relative; font-size: 26pt; line-height: 39pt; top: -147px;" onClick="javascript:playsound()">
+		<b id="textcontent" style="color: rgb(255, 102, 0);"><?=$note1?></b>
+    </div>
+</div>
+
+
+
+	
+
+ 
+<?
+require ('footer.php');
+?>

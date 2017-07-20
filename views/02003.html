@@ -1,0 +1,437 @@
+<?
+require ('config.php');
+$id='02003';
+if (!$note) {
+	$note="落叶知秋，情谊如酒，风渐凉时无烦忧；岁月流走，蓦然回首，一声问候醇绵依旧。季节交替，注意身体！";
+	$note1="落叶知秋，<br>情谊如酒，<br>风渐凉时无烦忧；<br>岁月流走，<br>蓦然回首，<br>一声问候醇绵依旧。<br>季节交替，<br>注意身体！<br>";
+} else {
+	if (strlen($from)>=6) {
+	  $note=urldecode($note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	} else {
+	  $note=urldecode($note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	}
+	if ($t=="ss") {
+	  $note=iconv("utf-8","gb2312",$note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	}
+}
+?>
+<html>
+  <head>
+    <title>送给你</title>
+    	    <meta http-equiv="imagetoolbar" content="no">
+    <meta name="viewport" content="width=500px, height=750px,initial-scale=0.64"/>
+    <meta http-equiv="content-type" content="text/html; charset=gb2312">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+        
+    <style type="text/css">
+      body{   
+        -webkit-touch-callout: none; 
+        -webkit-text-size-adjust: none;
+        margin:0 auto;       
+        overflow:hidden;   
+        position:relative;      
+        background:black;
+      }   
+      
+      div#content{
+        position:relative;   
+        border:1px solid #000; 
+        width:500px;    
+        height:750px;
+        margin:0 auto; 
+        top:0px;    
+        overflow:hidden;   
+        clear:both;
+      }
+    </style>
+
+
+    <style type="text/css">
+      
+#container {
+    /*position: relative;*/
+	position: absolute;
+    width: 500px;
+    height: 750px;
+    margin: 0px;
+    overflow: hidden;
+    background: #4E4226 url('img/02003/139581556997.jpg') no-repeat top left;
+	
+}
+
+/* Defines the position and dimensions of the leafContainer div */
+#leafContainer 
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/* This CSS rule is applied to all div elements in the leafContainer div.
+   It styles and animates each leafDiv.
+*/
+#leafContainer > div 
+{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    
+    /* We use the following properties to apply the fade and drop animations to each leaf.
+       Each of these properties takes two values. These values respectively match a setting
+       for fade and drop.
+    */
+    -webkit-animation-iteration-count: infinite, infinite;
+    -webkit-animation-direction: normal, normal;
+    -webkit-animation-timing-function: linear, ease-in;
+}
+
+/* This CSS rule is applied to all img elements directly inside div elements which are
+   directly inside the leafContainer div. In other words, it matches the 'img' elements
+   inside the leafDivs which are created in the createALeaf() function.
+*/
+#leafContainer > div > img {
+     position: absolute;
+     width: 100px;
+     height: 100px;
+
+    /* We use the following properties to adjust the clockwiseSpin or counterclockwiseSpinAndFlip
+       animations on each leaf.
+       The createALeaf function in the Leaves.js file determines whether a leaf has the 
+       clockwiseSpin or counterclockwiseSpinAndFlip animation.
+    */
+     -webkit-animation-iteration-count: infinite;
+     -webkit-animation-direction: alternate;
+     -webkit-animation-timing-function: ease-in-out;
+     -webkit-transform-origin: 50% -100%;
+}
+
+#leaf {
+     position: absolute;
+     left:0px;
+	 top:0px;
+	 width:100%;
+     z-index:1000;
+}
+
+
+/* Hides a leaf towards the very end of the animation */
+@-webkit-keyframes fade
+{
+    /* Show a leaf while into or below 95 percent of the animation and hide it, otherwise */
+    0%   { opacity: 1; }
+    95%  { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+
+/* Makes a leaf fall from -300 to 600 pixels in the y-axis */
+@-webkit-keyframes drop
+{
+    /* Move a leaf to -300 pixels in the y-axis at the start of the animation */
+    0%   { -webkit-transform: translate(0px, -50px); }
+    /* Move a leaf to 600 pixels in the y-axis at the end of the animation */
+    100% { -webkit-transform: translate(0px, 780px); }
+}
+
+/* Rotates a leaf from -50 to 50 degrees in 2D space */
+@-webkit-keyframes clockwiseSpin
+{
+    /* Rotate a leaf by -50 degrees in 2D space at the start of the animation */
+    0%   { -webkit-transform: rotate(-50deg); }
+    /*  Rotate a leaf by 50 degrees in 2D space at the end of the animation */
+    100% { -webkit-transform: rotate(50deg); }
+}
+
+
+/* Flips a leaf and rotates it from 50 to -50 degrees in 2D space */
+@-webkit-keyframes counterclockwiseSpinAndFlip 
+{
+    /* Flip a leaf and rotate it by 50 degrees in 2D space at the start of the animation */
+    0%   { -webkit-transform: scale(-1, 1) rotate(50deg); }
+    /* Flip a leaf and rotate it by -50 degrees in 2D space at the end of the animation */
+    100% { -webkit-transform: scale(-1, 1) rotate(-50deg); }
+}
+    </style>
+
+    <script>
+      gTextSizeMode = 'bodywidth';
+      gTextAnimateMode = 'print';
+      gTextColor = '#5c0605';
+      gTextAreaLeft = 0.1;
+      gTextAreaTop = 0.4;
+      gTextAreaWidth = 0.6;
+      gTextAreaHeight = 0.6;
+      gTextSpeed = 350;  
+      gTextDesc ='<?=$note1?>';
+      
+      gSoundUrl = 'zhiqingchun.mp3';
+
+      gShareLogo = '<?=$page_url?>img/home/<?=$id?>.jpg';
+      gShareUrl = '<?=$page_url?><?=$id?>.php?note=<?=urlencode($note)?>';
+      gShareTitle = '送给你';
+      gShareDesc = '<?=$note?>';
+    </script>
+  </head>
+
+  <body style="margin:0; height: 100%" onload="showText();">  
+    <div id="content">  
+    	<div id="container" >
+        <div id="leafContainer"></div>
+      </div>
+            <div id="ruler" style="width:100%;height:0"></div>
+      <div id="audiocontainer"> </div>
+      
+      <div id="textsuper" style="position:absolute;top:-1000;left:-1000;overflow-x:hidden;overflow-y:hidden;z-index:2000" >
+        <div id="textsub" style="color:black;position:relative;font-size:21pt;text-align:left;line-height:40pt;top:2000px" >
+        </div>
+      </div>
+
+      <script src="js/sa_card.js" type="text/javascript"></script>
+      
+        <style>
+#card_menu {
+  z-index: 8000; 
+  background-color: transparent;
+  background-size: 101px 101px!important;
+  position: fixed;
+  left: 0px;
+  bottom: 31px;
+  height: 101px;
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+#card_menu.fade { 
+  -webkit-animation: menu_fade_animation 5s infinite linear; 
+  -moz-animation: menu_fade_animation 5s infinite linear; 
+  -ms-animation: menu_fade_animation 5s infinite linear; 
+  -o-animation: menu_fade_animation 5s infinite linear; 
+  animation: menu_fade_animation 5s infinite linear;
+}
+
+#card_menu.hide {
+  bottom: -60px!important; opacity: 0; 
+  transition: all 666ms;
+  -moz-transition: all 666ms;
+  -webkit-transition: all 666ms;
+  -o-transition: all 666ms; 
+} 
+
+@-webkit-keyframes menu_fade_animation{ 0%{ opacity: 0.8; } 50%{ opacity: 0.2; } 100%{ opacity: 0.8; } } 
+@-moz-keyframes menu_fade_animation{ 0%{ opacity: 0.8; } 50%{ opacity: 0.2; } 100%{ opacity: 0.8; } } 
+@-ms-keyframes menu_fade_animation{ 0%{ opacity: 0; } 50%{ opacity: 1; } 100%{ opacity: 0; } } 
+@-o-keyframes menu_fade_animation{ 0%{ opacity: 0.8; } 50%{ opacity: 0.2; } 100%{ opacity: 0.8; } } 
+@keyframes menu_fade_animation{ 0%{ opacity: 0.8; } 50%{ opacity: 0.2; } 100%{ opacity: 0.8; } } 
+
+.menu_scale_animation { 
+  -webkit-animation: menu_scale_animation 910ms infinite linear; 
+  -moz-animation: menu_scale_animation 910ms infinite linear; 
+  -ms-animation: menu_scale_animation 910ms infinite linear; 
+  -o-animation: menu_scale_animation 910ms infinite linear; 
+  animation: menu_scale_animation 910ms infinite linear; 
+} 
+@-webkit-keyframes menu_scale_animation{ 0%{ -webkit-transform : scale(0.9); opacity: 0.6; } 100%{ -webkit-transform : scale(1.2); opacity: 0; } } 
+@-moz-keyframes menu_scale_animation{ 0%{ -moz-transform : scale(0.9); opacity: 0.6; } 100%{ -moz-transform : scale(1.2); opacity: 0; } } 
+@-ms-keyframes menu_scale_animation{ 0%{ -ms-transform : scale(0.9); opacity: 0.6; } 100%{ -ms-transform : scale(1.2); opacity: 0; } } 
+@-o-keyframes menu_scale_animation{ 0%{ -o-transform : scale(0.9); opacity: 0.6; } 100%{ -o-transform : scale(1.2); opacity: 0; } } 
+ 
+.menu_btn {
+  border-radius: 100%;
+  display: inline-block;
+  width: 101px;
+  height: 101px;
+  bottom: 31px;
+  margin: 0 8px;
+}
+        </style> 
+
+      <div id="card_menu" class="fade"> 
+              <div onclick="Customize();" class="menu_btn" style="background: url(<?=$page_url?>img/ext/menu_customize.png);background-size:contain;"></div> 
+        <div onclick="Share();" class="menu_btn" style="background: url(<?=$page_url?>img/ext/menu_share.png);background-size:contain;"></div> 
+        <div onclick="GetMore();" class="menu_btn" style="background: url(<?=$page_url?>img/ext/menu_more.png);background-size:contain;"></div> 
+            </div>
+      <div id="shareTips" style="background-color: rgba(0, 0, 0, 0.7); z-index: 8100;display: none">
+        <img class="send_arrow" src="<?=$page_url?>img/ext/share_tips.png"> 
+      </div>
+      <style> 
+        #shareTips{
+          position:absolute; 
+          top:0; 
+          left:0; 
+          height:0; 
+          bottom:0; 
+          width:100%; 
+          height:100%; 
+          background:rgba(0, 0, 0, 0.70); 
+          overflow:hidden;
+        }
+        #shareTips img{
+          position:absolute; 
+          top:5px; 
+          right:5px; 
+          width:284px; 
+          height:110px;
+        } 
+      </style> 
+<script>
+function Customize()
+{
+  id('card_menu').className = "hide";
+  setTimeout(function(){location.href = "<?=$page_url?>editcard.php?id=<?=$id?>"}, 600);
+}
+
+function Share()
+{
+  id('card_menu').className = "hide";
+  id('shareTips').style.display="block";
+  id('shareTips').onclick = function(){
+    id('shareTips').style.display="none";
+    id('shareTips').onclick = function(){};
+    id('card_menu').className = "fade";
+  }    
+}
+
+function Follow()
+{
+  location.href = '<?=$weixin_url?>';
+}
+
+function GetMore()
+{
+  location.href = '<?=$page_url?>index.php';
+}
+
+</script>    </div>
+    <script>
+function init()
+{
+    /* Get a reference to the element that will contain the leaves */
+    var container = document.getElementById('leafContainer');
+    /* Fill the empty container with new leaves */
+    for (var i = 0; i < 12; i++) 
+    {
+        container.appendChild(createALeaf());
+		
+    }
+}
+
+
+/*
+    Receives the lowest and highest values of a range and
+    returns a random integer that falls within that range.
+*/
+function randomInteger(low, high)
+{
+    return low + Math.floor(Math.random() * (high - low));
+}
+
+
+/*
+   Receives the lowest and highest values of a range and
+   returns a random float that falls within that range.
+*/
+function randomFloat(low, high)
+{
+    return low + Math.random() * (high - low);
+}
+
+
+/*
+    Receives a number and returns its CSS pixel value.
+*/
+function pixelValue(value)
+{
+    return value + 'px';
+}
+
+
+/*
+    Returns a duration value for the falling animation.
+*/
+
+function durationValue(value)
+{
+    return value + 's';
+}
+
+
+/*
+    Uses an img element to create each leaf. "Leaves.css" implements two spin 
+    animations for the leaves: clockwiseSpin and counterclockwiseSpinAndFlip. This
+    function determines which of these spin animations should be applied to each leaf.
+    
+*/
+function createALeaf()
+{
+    /* Start by creating a wrapper div, and an empty img element */
+    var leafDiv = document.createElement('div');
+    var image = document.createElement('img');
+    
+    /* Randomly choose a leaf image and assign it to the newly created element */
+    /*image.src = 'realLeaf' + randomInteger(1, 5) + '.png';*/
+	
+	var temp = randomInteger(1, 5);
+	if(temp ==1){
+		image.src = 'http://bxjcf.img40.wal8.com/img40/410389_20140325112526/139581545232.png';
+	}else if (temp==2)
+	{
+		image.src = 'http://bxjcf.img40.wal8.com/img40/410389_20140325112526/139581545119.png';
+	}else if (temp==3)
+	{
+		image.src = 'http://bxjcf.img40.wal8.com/img40/410389_20140325112526/139581545054.png';
+	}else if (temp==4)
+	{
+		image.src = 'http://bxjcf.img40.wal8.com/img40/410389_20140325112526/139581544929.png';
+	}
+	    
+    leafDiv.style.top = "-100px";
+
+    /* Position the leaf at a random location along the screen */
+    leafDiv.style.left = pixelValue(randomInteger(0, 500));
+    
+    /* Randomly choose a spin animation */
+    var spinAnimationName = (Math.random() < 0.5) ? 'clockwiseSpin' : 'counterclockwiseSpinAndFlip';
+    
+    /* Set the -webkit-animation-name property with these values */
+    leafDiv.style.webkitAnimationName = 'fade, drop';
+    image.style.webkitAnimationName = spinAnimationName;
+    
+    /* Figure out a random duration for the fade and drop animations */
+    var fadeAndDropDuration = durationValue(randomFloat(5, 11));
+    
+    /* Figure out another random duration for the spin animation */
+    var spinDuration = durationValue(randomFloat(4, 8));
+    /* Set the -webkit-animation-duration property with these values */
+    leafDiv.style.webkitAnimationDuration = fadeAndDropDuration + ', ' + fadeAndDropDuration;
+
+    var leafDelay = durationValue(randomFloat(0, 5));
+    leafDiv.style.webkitAnimationDelay = leafDelay + ', ' + leafDelay;
+
+    image.style.webkitAnimationDuration = spinDuration;
+
+    // add the <img> to the <div>
+    leafDiv.appendChild(image);
+
+    /* Return this img element so it can be added to the document */
+    return leafDiv;
+}
+
+
+/* Calls the init function when the "Falling Leaves" page is full loaded */
+    window.addEventListener('load', init, false);      
+    </script>
+  </body>
+</html>

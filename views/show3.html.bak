@@ -1,0 +1,210 @@
+<?
+require ('config.php');
+?>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta name="viewport" content="width=device-width"/>
+<meta name="MobileOptimized" content="320"/>
+<title>爱情物语</title>
+
+<link rel="stylesheet" type="text/css" href="css/homestyle.css" media="all">
+
+
+</head>
+
+<body class="pic">
+
+<nav class="site all">
+	<a  href="index.php">最新</a>
+  <a href="love.php">爱情</a>
+  <a href="show3.php" style="background:#ff9900">心情</a>
+  <a href="greeting.php">问候</a>
+  <a href="birthday.php">生日</a>
+  
+</nav>
+<nav class="site all">
+<a href="zhufu.php">祝福</a>
+<a href="gaoguai.php">搞怪</a>
+<a  href="http://mp.weixin.qq.com/s?__biz=MzA3NDkxNTkzOQ==&mid=201251435&idx=1&sn=09922467549ebd8976c94ec06302e069#rd">关注我领礼物</a>
+</nav>
+
+<section class="cnl">
+<h3 class="h ht2">
+	<em>心情-美卡</em>
+	<p align="right"> <a style="color:color:#3783c6;font-size:12pt;" href="index.php">更多</a></p>
+</h3>
+<section class="pl pl_c2">
+	<a href="2022.php" class="h4">
+
+			<i class="img"><img src="img/home/2022.jpg" width="80" height="80"></i>
+
+	<p>写在墙里的话</p><p>编号:2022</p>
+	</a>
+	<a href="2020.php" class="h4">
+
+			<i class="img"><img src="img/home/2020.jpg" width="80" height="80"></i>
+
+	<p>寒冷的夜</p><p>编号:2020</p>
+	</a>
+	<a href="2021.php" class="h4">
+
+			<i class="img"><img src="img/home/2021.jpg" width="80" height="80"></i>
+
+	<p>悠闲</p><p>编号:2021</p>
+	</a>
+	</section>
+	
+	
+	
+	<section class="pl pl_c2">
+
+	<a href="2030.php" class="h4">
+
+			<i class="img"><img src="img/home/2030.jpg" width="80" height="80"></i>
+
+	<p>秋天遐想</p><p>编号:3</p>
+	</a>
+	<a href="2027.php" class="h4">
+
+			<i class="img"><img src="img/home/2027.jpg" width="80" height="80"></i>
+
+	<p>静等花开</p><p>编号:1</p>
+</a>
+	<a href="2025.php" class="h4">
+
+			<i class="img"><img src="img/home/2025.jpg" width="80" height="80"></i>
+
+	<p>雨中列车</p><p>编号:2</p>
+	</a>
+	
+	</section>
+	
+	
+	
+  <section class="pl pl_c2">
+		<a href="2018.php" class="h4">
+
+				<i class="img"><img src="img/home/2018.jpg" width="80" height="80"></i>
+
+		<p>心净 心静 心境</p><p>编号:2018</p>
+		</a>
+		<a href="2017.php" class="h4">
+
+				<i class="img"><img src="img/home/2017.jpg" width="80" height="80"></i>
+
+		<p>咏莲</p><p>编号:2017</p></a>
+		
+			<a href="2019.php" class="h4">
+
+			<i class="img"><img src="img/home/2019.jpg" width="80" height="80"></i>
+
+		<p>旅途</p><p>编号:2019</p></a>
+	
+	</section>
+	
+<section class="pl pl_c2">
+<a href="2015.php" class="h4">
+
+			<i class="img"><img src="img/home/2015.jpg" width="80" height="80"></i>
+
+	<p>一叶清晨</p><p>编号:2015</p>
+    </a>
+<a href="2014.php" class="h4">
+
+		<i class="img"><img src="img/home/2014.jpg" width="80" height="80"></i>
+
+<p>十字路口</p><p>编号:2014</p></a>
+
+	<a href="2011.php" class="h4">
+
+		<i class="img"><img src="img/home/2011.jpg" width="80" height="80"></i>
+
+<p>时间都去哪儿了</p><p>编号:2011</p></a>
+
+
+</section>
+  
+<section class="pl pl_c2">
+    
+<a href="2013.php" class="h4">
+
+		<i class="img"><img src="img/home/2013.jpg" width="80" height="80"></i>
+
+<p>夏日祝福</p><p>编号:2013</p>
+</a>
+	<a href="2012.php" class="h4">
+
+			<i class="img"><img src="img/home/2012.jpg" width="80" height="80"></i>
+
+	<p>明天更好</p><p>编号:2012</p></a>
+	
+	<a href="4011.php" class="h4">
+
+			<i class="img"><img src="img/home/4011.jpg" width="80" height="80"></i>
+
+	<p>对10年的自己说</p><p>编号:4011</p>
+	</a>
+
+</section>
+
+
+
+<section class="pl pl_c2">
+    
+	<a href="2010.php" class="h4">
+
+			<i class="img"><img src="img/home/2010.jpg" width="80" height="80"></i>
+
+<p>春的韵律</p><p>编号:2010</p></a>
+
+<a href="2008.php" class="h4">
+		<i class="img">
+			<img src="img/home/2008.jpg" width="90" height="80">
+			<p style="color:red">时光荏苒</p><p style="color:red">编号：2008</p>
+		</i>
+</a>
+
+<a href="2007.php" class="h4">
+		<i class="img">
+			<img src="img/home/2007.jpg" width="90" height="80">
+			<p style="color:red">励志的鸡蛋</p><p style="color:red">编号：2007</p>
+		</i>
+</a>
+
+
+
+</section>
+
+<section class="pl pl_c2">
+    
+<a href="2006.php" class="h4">
+	<i class="img">
+		<img src="img/home/2006.jpg" width="90" height="80">
+		<p style="color:red">休闲时光</p><p style="color:red">编号：2006</p>
+	</i>
+</a>
+<a href="2005.php" class="h4">
+	<i class="img">
+		<img src="img/home/2005.jpg" width="90" height="80">
+		<p style="color:red">夜深了</p><p style="color:red">编号：2005</p>
+	</i>
+</a>
+
+
+
+
+</section>
+
+
+</section>
+
+<section class="cnl">
+
+<h3 class="h ht2">
+	<em>更多微卡敬请期待~O(∩_∩)O~</em>
+  </h3>
+  
+</section>
+
+</body>
+</html>

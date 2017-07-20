@@ -1,0 +1,76 @@
+<?
+require ('config.php');
+$id='1005';
+if (!$note) {
+	$note="一场秋雨一场寒，天凉了，多加件衣服！";
+	$note1="一场秋雨一场寒，<br>天凉了，<br>多加件衣服！";
+} else {
+	if (strlen($from)>=6) {
+	  $note=urldecode($note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	} else {
+	  $note=urldecode($note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	}
+	if ($t=="ss") {
+	  $note=iconv("utf-8","gb2312",$note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	}
+}
+?>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+    
+
+    <title>秋的问候</title>
+		
+	
+	<script>
+		gSizeMode = 'bodywidth';
+		gAnimateMode = 'print';
+		gSound = 'sound/anjing.mp3'
+		gColor = 'white';
+		gTextAreaLeft = 0.0762;
+		gTextAreaTop = 0.1;
+		gTextAreaWidth = 0.8;
+		gTextAreaHeight = 0.5;		
+		gCardTextNoWrap ='' ||'<?=$note?>';
+		gCardText ='' ||'<?=$note1?>';		
+	// script place
+
+gShareLogo = '<?=$page_url?>img/home/<?=$id?>.jpg';
+            gShareUrl = '<?=$page_url?><?=$id?>.php?note=<?=urlencode($note)?>';
+            gShareTitle = '送给你';
+            gShareDesc = '<?=$note?>';
+
+	
+</script>
+
+
+<script src="../public/js/showcard_nosound.js?d=1"></script>
+<script src="../public/js/showcard_weixin.js?d=1"></script>
+<div id="audiocontainer"></div>
+<div id="cardsound" style="position: fixed; left: 440px; top: 40px; z-index: 5000; visibility: visible;"></div>
+ 
+ </head>
+
+<body onLoad="onLoad();" onclick="javascript:playsound()">
+
+<img src="img/1005_files/139579729584.gif" width="100%">
+
+
+<div id="ruler" style="width:100%;height:0"></div>
+<div id="textsuper" style="position: absolute; top: 56.5px; left: 43.053000000000004px; overflow: hidden; z-index: 4; height: 282.5px; width: 452px;">
+	<div id="textsub" style="color: black; line-height: 80pt; position: relative; font-size: 60px; top: -36px;">
+		<b id="textcontent" style="color: white;"><?=$note1?></b>
+    </div>
+</div>
+<?
+require ('footer.php');
+?>

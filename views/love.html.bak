@@ -1,0 +1,123 @@
+<?
+require ('config.php');
+?>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta name="viewport" content="width=device-width"/>
+<meta name="MobileOptimized" content="320"/>
+<title>爱情物语</title>
+
+<link rel="stylesheet" type="text/css" href="css/homestyle.css" media="all">
+
+
+</head>
+
+<body class="pic">
+
+<nav class="site all">
+	<a  href="index.php">最新</a>
+  <a href="love.php" style="background:#ff9900">爱情</a>
+  <a href="show3.php">心情</a>
+  <a href="greeting.php">问候</a>
+  <a href="birthday.php">生日</a>
+</nav>
+<nav class="site all">
+<a href="zhufu.php">祝福</a>
+<a href="gaoguai.php">搞怪</a>
+<a  href="http://mp.weixin.qq.com/s?__biz=MzAwMTEwNzkzOA==&mid=201127912&idx=1&sn=80608f6d258aa4230fc204ce580bb16f#rd">关注我领礼物</a>
+</nav>
+
+
+<section class="cnl">
+<h3 class="h ht2">
+	<em>爱情</em>
+	<p align="right"> <a style="color:color:#3783c6;font-size:12pt;" href="index.php">更多</a></p>
+</h3>
+<section class="pl pl_c2">
+<a href="03001.php" class="h4">
+		<i class="img"><img src="img/home/03001.jpg" width="80" height="80"></i>
+<p>最美情话</p><p>编号:03001</p></a>
+<a href="03002.php" class="h4">
+		<i class="img"><img src="img/home/03002.jpg" width="80" height="80"></i>
+<p>两颗心</p><p>编号:03002</p></a>
+        
+<a href="03003.php" class="h4">
+		<i class="img"><img src="img/home/03003.jpg" width="80" height="80"></i>
+<p>爱的幸福</p><p>编号:03003</p></a>
+</section>
+<section class="pl pl_c2">
+
+<a href="3002.php" class="h4">
+			<i class="img">
+				<img src="img/home/3002.jpg" width="80" height="80">
+				<p>相知相守</p><p>编号:3002</p>
+			</i>
+	</a>
+
+<a href="1031.php" class="h4">
+			<i class="img">
+				<img src="img/home/1031.jpg" width="80" height="80">
+				<p>幸福摩天轮</p><p>编号:1031</p>
+			</i>
+	</a>
+	<a href="3007.php" class="h4">
+
+			<i class="img"><img src="img/home/3007.jpg" width="80" height="80"></i>
+
+	<p>我爱你</p><p>编号:3007</p></a>
+
+
+</section>
+
+<section class="pl pl_c2">
+
+
+	<a href="3006.php" class="h4">
+		<i class="img">
+			<img src="img/home/3006.jpg" width="80" height="80">
+			<p>心愿瓶</p><p>编号:3006</p>
+		</i>
+	</a>
+		<a href="3005.php" class="h4">
+			<i class="img">
+				<img src="img/home/3005.jpg" width="80" height="80">
+				<p>陪你数星星</p><p>编号:3005</p>
+			</i>
+	</a>
+	<a href="6001.php" class="h4">
+			<i class="img">
+				<img src="img/home/6001.jpg" width="80" height="80">
+				<p>我爱你</p><p>编号:6001</p>
+			</i>
+	</a>
+
+
+</section>
+
+<section class="pl pl_c2">
+
+	
+		
+		<a href="3004.php" class="h4">
+			<i class="img">
+				<img src="img/home/3004.jpg" width="80" height="80">
+				<p>最浪漫的事</p><p>编号:3004</p>
+			</i>
+	</a>
+
+</section>
+    
+</section>
+		
+</section>
+
+<section class="cnl">
+
+<h3 class="h ht2">
+	<em>更多微卡敬请期待~O(∩_∩)O~</em>
+  </h3>
+  
+</section>
+
+</body>
+</html>

@@ -1,0 +1,201 @@
+<?
+require ('config.php');
+$id='2031';
+if (!$note) {
+	$note="当火车开入这座陌生的城市，那是从来就没有见过的霓虹，我打开离别时你送我的信件，忽然感到无比的思念，看不见雪的冬天不夜的城市，我听见有人欢呼有人在哭泣，早习惯穿梭冲满诱惑的黑夜，但却无法忘记你的脸，有没有人曾告诉你我很爱你，有没有曾在你日记里哭泣，有没有人曾告诉你我很在意，在意这座城市的距离";
+	$note1="谢谢你<br>爸爸<br>把家的责任扛在肩上<br>谢谢你<br>妈妈<br>让每顿饭都有家的感觉<br>谢谢你<br>老师<br>给了我看世界的眼睛<br>谢谢你<br>朋友<br>你的帮助和支持让我幸福<br>谢谢你<br>亲爱的<br>时光不老，我们不散<br>谢谢你<br>自己<br>无所畏惧的从未放弃<br>谢谢你<br>末班车<br>停下等待一路追赶的我<br>谢谢你<br>灿烂笑容<br>照亮夜空<br>谢谢你<br>生活<br>让我知道感恩而活";
+} else {
+	if (strlen($from)>=6) {
+	  $note=urldecode($note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	} else {
+	  $note=urldecode($note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	}
+	if ($t=="ss") {
+	  $note=iconv("utf-8","gb2312",$note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	}
+}
+?>
+<html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=500px, height=750px,initial-scale=0.64"> 
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<title>送给你</title>  
+
+
+<script src="img/2031_files/jquery.min.js"></script>
+<style type="text/css">  
+    <!--   
+    body{   
+		-webkit-touch-callout: none; 
+		-webkit-text-size-adjust: none;
+        margin:0 auto;   		
+        overflow:hidden;   
+		position:relative;
+    }   
+  
+    div#content{
+        position:relative;   
+        border:1px solid #000; 
+		width:500px;		
+		height:750px;
+		margin:0 auto; 
+        top:0px;    
+        overflow:hidden;   
+        clear:both;
+    }
+  
+    div#bg{   
+        position:absolute;   
+        left:0px;   
+        top:0px;
+    } 
+	
+	div#bg1{   
+        position:absolute;   
+        left:0px;   
+        top:0px;
+		-webkit-animation:fadeOut 3s 2s infinite ease-in-out alternate both;
+    } 
+	
+	div#bg2{   
+        position:absolute;   
+        left:0px;   
+        top:0px;
+		-webkit-animation:fadeOut 3s 4.5s infinite ease-in-out alternate both;
+    } 
+	@-webkit-keyframes fadeOut{
+		0%{opacity:0;}
+		100%{opacity:1;}
+	}
+
+	div#foot{   
+        position:fixed; 
+		width:500px;
+		left:320px;
+		bottom:20px;
+		z-index:2000;
+    } 	
+  
+    div#relative{   
+        position:relative;   
+        left:100px;   
+        top:0px;   
+    }   
+  
+    div#static{   
+        background-color:#bbb;   
+		top:20;
+		left:30px;
+        position:static;   
+    }   
+	
+    -->  
+</style>  
+<script>
+	gSizeMode = 'bodywidth';
+	gAnimateMode = 'up';
+	gSound ='' || 'sound/motianlun.mp3';
+	gColor = '#FFE16A';
+	gTextAreaLeft = 0.15;
+	gTextAreaTop = 0.2;
+	gTextAreaWidth = 0.8;
+	gTextAreaHeight = 0.4;
+	gSpeed = 300;		
+	gCardTextNoWrap ='';
+	gCardText ='' ||'<?=$note1?>';
+share_url='';
+	
+	gShareLogo = '<?=$page_url?>img/home/<?=$id?>.jpg';
+            gShareUrl = '<?=$page_url?><?=$id?>.php?note=<?=urlencode($note)?>';
+            gShareTitle = '送给你';
+            gShareDesc = '<?=$note?>';
+	
+	//做卡页面参数
+	gcardid = 2031;
+	goptiontxt = "xinqing";
+	</script>
+	
+	<script>
+		//需要调用leafinit（）来启动，需要声明外层div，id="container"，还有内层div，id="leafContainer"
+		//参数设置
+		var leafNum = 30;			//落下叶子的数量
+		var kindNum = 1;			//叶子的种类
+		//叶子使用图片地址，数量应与kindNum相同
+		var kindurl = new Array("img/2031_files/xue1.png");
+	</script>
+	<script src="img/2031_files/fleaves.min.js"></script>
+	<link rel="stylesheet" href="img/2031_files/leavesGeneral.css" type="text/css" media="screen" charset="utf-8">
+		
+
+<script>
+function showTxt()
+		{
+			var text = document.getElementById("textsuper");
+			text.style.display = "block";
+			onLoad();
+		}
+</script>
+<script src="../js/showcard_nosound.js?d=1"></script>
+<script src="../js/showcard_weixin.js?d=1"></script>
+<div id="audiocontainer"></div>
+<div id="cardsound" style="position: fixed; left: 440px; top: 40px; z-index: 5000; visibility: visible;"></div>
+ 
+ </head>  
+
+
+
+
+<body onLoad="showTxt();"> 
+
+	<div id="container" style="left:0%;top:0%;z-index:10">
+		<div id="leafContainer"></div></div>
+	</div>
+
+	<script>
+		leafinit();
+	</script>
+	
+    <div id="content">  
+        <div id="bg">
+			<img src="img/2031_files/1.jpg">
+		</div>  
+		<div id="bg1">
+			<img src="img/2031_files/2_1.jpg">
+		</div> 
+		<div id="bg2">
+			<img src="img/2031_files/3.jpg">
+		</div> 		
+		
+		<div id="container" onClick="clickbg();" style="left:0%;top:0%;">
+			<div id="leafContainer"></div>
+		</div>		
+
+	
+
+
+<div id="ruler" style="width:100%;height:0"></div>
+<div id="textsuper" style="position: absolute; top: 119.60000000000001px; left: 89.7px; overflow: hidden; z-index: 4000; display: block; height: 239.20000000000002px; width: 478.40000000000003px;">
+	<div id="textsub" style="color: black; position: relative; font-size: 21pt; text-align: left; line-height: 42pt; top: -18px;">
+		<b id="textcontent" style="color: rgb(255, 225, 106);"></b>
+    </div>
+</div>
+
+
+
+  
+  
+<?
+require ('footer.php');
+?>

@@ -1,0 +1,219 @@
+<?
+require ('config.php');
+$id='1025';
+if (!$note) {
+	$note="���˳��⣺��Է�10�飬����20�飬��Ⱦ�30�飬���100�飬����50�飬��ɹ̫��10�飨�����ۣ�����ѹ��·20�飬��1�������ڣ��� ע���Ϸ���Ӫ������Ϊ���������ӵ���� 30�����Ͽ���������ۣ� С����Ӫ���޷�Ʊ����ǰԤԼŶ�� С�����⣬�Ų�����";
+	$note1="���˳��⣺<br>��Է�10�飬<br>����20�飬<br>��Ⱦ�30�飬<br>���100�飬<br>����50�飬<br>��ɹ̫��10�飨�����ۣ���<br>��ѹ��·20�飬��1�������ڣ��� <br>ע���Ϸ���Ӫ��<br>����Ϊ����<br>�����ӵ����<br>30�����Ͽ���������ۣ�<br>С����Ӫ���޷�Ʊ��<br>��ǰԤԼŶ��<br>С�����⣬�Ų�����!";
+} else {
+	if (strlen($from)>=6) {
+	  $note=urldecode($note);
+	  $note1=str_replace("��","��<br>",$note);
+	  $note1=str_replace("��","��<br>",$note1);
+	  $note1=str_replace("��","��<br>",$note1);
+	} else {
+	  $note=urldecode($note);
+	  $note1=str_replace("��","��<br>",$note);
+	  $note1=str_replace("��","��<br>",$note1);
+	  $note1=str_replace("��","��<br>",$note1);
+	}
+	if ($t=="ss") {
+	  $note=iconv("utf-8","gb2312",$note);
+	  $note1=str_replace("��","��<br>",$note);
+	  $note1=str_replace("��","��<br>",$note1);
+	  $note1=str_replace("��","��<br>",$note1);
+	}
+}
+
+if (isset($_GET['p1'])){
+	$p1=$_GET['p1'];
+}
+if (isset($_GET['p2'])){
+	$p2=$_GET['p2'];
+}
+if(!isset($p1)) $p1=1;
+if(!isset($p2)) $p2=1;
+?>
+
+
+<html>  
+	<head>  
+		<meta http-equiv="content-type" content="text/html; charset=gb2312">  
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=500px, height=750px,initial-scale=0.64" /> 
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="stylesheet" href="img/1025_files/makecard_top.css" type="text/css" media="screen" charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="img/1025_files/ms1025.css"/>
+		
+		<title>�͸���</title>  
+		
+				
+		<script type="text/javascript">
+					
+			function openp1(){
+				var td = document.getElementById("p1");
+				td.style.display = "block";
+				closep2();
+			}
+			function closep1(){
+				var td = document.getElementById("p1");
+				td.style.display = "none";
+			}
+			function openp2(){
+				var td = document.getElementById("p2");
+				td.style.display = "block";
+				closep1();
+			}
+			function closep2(){
+				var td = document.getElementById("p2");
+				td.style.display = "none";			
+			}
+		</script>
+			
+		<style type="text/css">  
+			<!--   
+			body{   
+				-webkit-touch-callout: none; 
+				-webkit-text-size-adjust: none;
+				margin:0 auto;   		
+				overflow:hidden;   
+				position:relative;
+			}   
+		  
+			div#content{
+				position:relative;   
+				border:1px solid #000; 
+				width:500px;		
+				height:750px;
+				margin:0 auto; 
+				top:0px;    
+				overflow:hidden;   
+				clear:both;
+			}
+		  
+			div#bg{   
+				position:absolute;   
+				left:0px;   
+				top:0px;
+			} 
+			
+			div#bg1{   
+				position:absolute;   
+				left:0px;   
+				top:359px;
+				-webkit-animation:fadeOut 10s 6.5s infinite ease-in-out alternate both;
+			} 
+			
+			div#bg2{   
+				position:absolute;   
+				left:124px;   
+				top:536px;
+				-webkit-animation:fadeOut 10s 6.5s infinite ease-in-out alternate both;
+			}
+			
+			div#foot{   
+				position:fixed; 
+				left:320px;
+				bottom:10px;
+				z-index:4000;
+			} 	
+			-->  
+		</style>  
+		<script>
+			gSizeMode = 'bodywidth';
+			gAnimateMode = 'up';
+			gSound = 'sound/sc.mp3';
+			gColor = '#ffff33';
+			gTextAreaLeft = 0.1;
+			gTextAreaTop = 0.1;
+			gTextAreaWidth = 0.9;
+			gTextAreaHeight = 0.3;
+			gSpeed = 400;		
+			gCardTextNoWrap ='' || '<?=$note?>';
+			gCardText ='' || '<?=$note1?>';
+			// script place
+			
+			gShareLogo = '<?=$page_url?>img/home/<?=$id?>.jpg';
+            gShareUrl = '<?=$page_url?><?=$id?>.php?note=<?=urlencode($note)?>';
+            gShareTitle = '�͸���';
+            gShareDesc = '<?=$note?>';
+			</script>
+
+		<script src="../public/js/showcard_nosound.js?d=1"></script>
+<script src="../public/js/showcard_weixin.js?d=1"></script>
+<script src="img/1025_files/url.js"></script>
+<div id="audiocontainer"></div>
+<div id="cardsound" style="position: fixed; left: 440px; top: 40px; z-index: 5000; visibility: visible;"></div>
+ 
+ 
+	</head>  
+	<body onLoad = "onLoad();">  
+		<div id="content">  
+			<div id="p1" class="content_div">
+		
+				<ul class="box" style = "z-index:199">	
+					<div onClick="location.href= setUrlParam('p1','1',location.href);" class="paper"><li><img src="img/1025_files/x1025_0.jpg"/></li></div>	
+					<div onClick="location.href= setUrlParam('p1','2',location.href);" class="paper"><li><img src="img/1025_files/x1025_1.jpg"/></li></div>
+					<div onClick="location.href= setUrlParam('p1','3',location.href);" class="paper"><li><img src="img/1025_files/x1025_2.jpg"/></li></div>
+					<div onClick="location.href= setUrlParam('p1','4',location.href);" class="paper"><li><img src="img/1025_files/x1025_3.jpg"/></li></div>
+					<div onClick="location.href= setUrlParam('p1','5',location.href);" class="paper"><li><img src="img/1025_files/x1025_4.jpg"/></li></div>
+					<div onClick="location.href= setUrlParam('p1','6',location.href);" class="paper"><li><img src="img/1025_files/x1025_5.jpg"/></li></div>
+					<div onClick="location.href= setUrlParam('p1','7',location.href);" class="paper"><li><img src="img/1025_files/x1025_6.jpg"/></li></div>
+					
+					
+				</ul>			
+				
+				<p align="center" style="text-indent:0em;"><a class="blueButton" onClick="closep1();">�ر�</a></p>
+				<br>
+			</div>
+			
+			<div id="p2" class="content_div2">
+		
+				<ul class="box2" style = "z-index:199">	
+					<div onClick="location.href= setUrlParam('p2','1',location.href);" class="paper"><li><img src="img/1025_files/x1025_zi1.jpg"/></li></div>
+					<div onClick="location.href= setUrlParam('p2','2',location.href);" class="paper"><li><img src="img/1025_files/x1025_zi2.jpg"/></li></div>
+					<div onClick="location.href= setUrlParam('p2','3',location.href);" class="paper"><li><img src="img/1025_files/x1025_zi3.jpg"/></li></div>
+					<div onClick="location.href= setUrlParam('p2','4',location.href);" class="paper"><li><img src="img/1025_files/x1025_zi4.jpg"/></li></div>				
+					
+				</ul>			
+				
+				<p align="center" style="text-indent:0em;"><a class="blueButton" onClick="closep2();">�ر�</a></p>
+				<br>
+			</div>
+		
+			 <div id="bg" >
+				<img id="bg_img" src = "img/1025_files/1025_<?=($p1-1)?>.gif"/>
+			</div> 
+			<div id="bg1">
+				<img id="bg1_img" src = "img/1025_files/1025_00.gif"/>
+			</div> 	
+			<div id="bg2">
+				<img id="bg2_img" src = "img/1025_files/1025_zi<?=$p2?>.png"/>
+			</div> 
+						
+			<div id="container" onClick="clickbg();" style="left:0%;top:0%;">
+				<div id="leafContainer"></div>
+			</div>
+				
+			
+		</div>  
+		
+
+		
+		<div id="ruler" style="width:100%;height:0"></div>
+		<div id="textsuper" style="position:absolute;top:-1000;left:-1000;overflow-x:hidden;overflow-y:hidden;z-index:4000">
+			<div id="textsub" style='color:black;position:relative;font-size:20pt;text-align:center;line-height:36pt' >
+				<b id="textcontent">
+				</b>
+			</div>
+		</div>
+		
+		<div style="height:100px;" id="makecard">
+				<a onClick="openp1();"><img style="padding:18px 3px 0px 3px; " width="150px" src="img/1025_files/1025_button1.png"/></a>
+				<a onClick="openp2();"><img style="padding:18px 3px 0px 3px; "width="150px" src="img/1025_files/1025_button2.png"/></a>		
+		</div>
+<?
+require ('footer.php');
+?>
+ 

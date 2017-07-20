@@ -1,0 +1,137 @@
+<?
+require ('config.php');
+$id='2005';
+if (!$note) {
+	$note="夜深了<br>天上的星星闪啊闪<br>我窝在被子里<br>睡不着<br>想你的声音<br>想你的微笑<br>想你温暖的拥抱<br>想你熟悉的味道<br>亲爱的，我想你了<br>你也在想我吗？";
+	$note1="夜深了<br>天上的星星闪啊闪<br>我窝在被子里<br>睡不着<br>想你的声音<br>想你的微笑<br>想你温暖的拥抱<br>想你熟悉的味道<br>亲爱的，我想你了<br>你也在想我吗？";
+} else {
+	if (strlen($from)>=6) {
+	  $note=urldecode($note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	} else {
+	  $note=urldecode($note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	}
+	if ($t=="ss") {
+	  $note=iconv("utf-8","gb2312",$note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	}
+}
+?>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+	
+    <meta name="viewport" content="width=500px, initial-scale=0.64">
+
+	<title>夜深了</title>	
+	<script src="img/2005_files/jquery.min.js"></script>
+    <style type="text/css">
+
+	<!--
+			
+		#stars{ 
+			width:450px;
+			height:200px;
+			position:absolute; 
+			left:0;
+			top:0;
+			z-index:1;
+		}
+		#stars img{ position:absolute }
+	
+	-->
+
+    </style>
+
+	
+	<script src="img/2005_files/showcard_nosound.js"></script>
+	<script>
+		gSizeMode = 'bodywidth';
+		gAnimateMode = 'print';
+		gSound = 'sound/woyuanyi.mp3';
+		gColor = '#66ffff';
+		gTextAreaLeft = 0.0762;
+		gTextAreaTop = 0.1;
+		gTextAreaWidth = 0.85;
+		gTextAreaHeight = 0.45;
+		gSpeed = 400;		
+		gCardTextNoWrap ='' ||'<?=$note1?>';
+		gCardText ='' ||'<?=$note1?>';
+	gShareLogo = '<?=$page_url?>img/home/<?=$id?>.jpg';
+            gShareUrl = '<?=$page_url?><?=$id?>.php?note=<?=urlencode($note)?>';
+            gShareTitle = '送给你';
+            gShareDesc = '<?=$note?>';
+	</script>
+	
+
+	<script src="../public/js/showcard_nosound.js?d=1"></script>
+<script src="../public/js/showcard_weixin.js?d=1"></script>
+<div id="audiocontainer"></div>
+<div id="cardsound" style="position: fixed; left: 440px; top: 40px; z-index: 5000; visibility: visible;"></div>
+ 
+ 
+
+<script>
+function randomInteger(low, high)
+{
+    return low + Math.floor(Math.random() * (high - low));
+}
+
+$(document).ready(function(){
+	var num=15;
+	for(var i=0;i<num;i++)
+	{
+		var posL=Math.random()*$('#stars').width()+'px';
+		var posT=Math.random()*$('#stars').height()+'px';
+		$('#stars').append("<img src='img/2005_files/xingxing"+randomInteger(1,6)+".png' id='star"+i+"' style=\'"+"left:"+posL+";top:"+posT+"\'/>");
+	}
+	
+	$("#stars img").each(function(){
+		dark($(this).attr("id"));
+	});
+	onLoad();
+});
+
+function dark(name){
+       $("#"+name+"").animate({opacity:'0'},randomInteger(1000,2000),function(){light(name)});
+}
+function light(name){
+    $("#"+name+"").animate({opacity:'0.9'},randomInteger(1000,2000),function(){dark(name)});
+}
+
+</script>
+
+
+
+</head>
+
+<body bgcolor="#111111">
+
+<div style="position:absolute;left:0;top:0;z-index:0">
+	<img src="img/2005_files/139582387733.jpg" width="500px">
+</div>
+
+<div id="stars"></div>
+
+
+
+<div id="ruler" style="width:100%;height:0"></div>
+<div id="textsuper" style="position: absolute; top: 58.2px; left: 44.348400000000005px; overflow: hidden; z-index: 4; height: 261.90000000000003px; width: 494.7px;" onClick="javascript:playsound()">
+	<div id="textsub" style="color: black; position: relative; font-size: 16pt; line-height: 25pt; top: -2px;" onClick="javascript:playsound()">
+		<b id="textcontent" style="color: rgb(102, 255, 255);"><?=$note1?></b>
+    </div>
+</div>
+
+
+
+	
+
+ 
+<?
+require ('footer.php');
+?>

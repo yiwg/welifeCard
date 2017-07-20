@@ -1,0 +1,378 @@
+<?
+require ('config.php');
+$id='2014';
+if (!$note) {
+	$note="城市的夜晚霓虹闪烁，<br>我们忙碌着，<br>迷失着，<br>站在人生的十字路口，<br>我们也许会徘徊不定、<br>也许会犹豫不决。<br><br>不用急着说别无选择，<br>其实是非对错，<br>全在心灵的一个选择，<br>那就放慢脚步，<br>问问自己最在乎什么？<br>最想要的什么？<br>然后整装出发！<br><br>也许在下一个路口，<br>就会看到希望!";
+	$note1="城市的夜晚霓虹闪烁，<br>我们忙碌着，<br>迷失着，<br>站在人生的十字路口，<br>我们也许会徘徊不定、<br>也许会犹豫不决。<br><br>不用急着说别无选择，<br>其实是非对错，<br>全在心灵的一个选择，<br>那就放慢脚步，<br>问问自己最在乎什么？<br>最想要的什么？<br>然后整装出发！<br><br>也许在下一个路口，<br>就会看到希望!";
+} else {
+	if (strlen($from)>=6) {
+	  $note=urldecode($note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	} else {
+	  $note=urldecode($note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	}
+	if ($t=="ss") {
+	  $note=iconv("utf-8","gb2312",$note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	}
+}
+?>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=500px, height=750px,initial-scale=0.64"> 
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<title>送给你</title>  
+
+
+<script src="img/2014_files/jquery.min.js"></script>
+<style type="text/css">  
+    <!--   
+    body{   
+		-webkit-touch-callout: none; 
+		-webkit-text-size-adjust: none;
+        margin:0 auto;   		
+        overflow:hidden;   
+		position:relative;
+    }   
+  
+    div#content{
+        position:relative;   
+        border:1px solid #000; 
+		width:500px;		
+		height:750px;
+		margin:0 auto; 
+        top:0px;    
+        overflow:hidden;   
+        clear:both;
+    }
+  
+    div#bg{   
+        position:absolute;   
+        left:0px;   
+        top:0px;
+		-webkit-animation:fadeOut 4s 0.5s infinite ease-in-out alternate both;
+    } 
+	
+	div#bg1{   
+        position:absolute;   
+        left:0px;   
+        top:0px;
+		-webkit-animation:fadeOut 4s 4.5s infinite ease-in-out alternate both;
+    } 
+	@-webkit-keyframes fadeOut{
+		0%{opacity:1;}
+		100%{opacity:0;}
+	}
+	div#stars
+	{ 
+		position:absolute; 
+		width:400px;
+		height:700px;
+		left:0px;
+		top:0px;
+	}
+	#stars img{ position:absolute }
+	
+	@-webkit-keyframes flash1{
+		0%{opacity:0.0;}
+		100%{opacity:0.7;}
+	}
+	@-webkit-keyframes flash2{
+		0%{opacity:0.3;}
+		100%{opacity:0.6;}
+	}
+	@-webkit-keyframes flash3{
+	0%,50%,100%{opacity: 0.8;}
+	25%,75%{opacity: 0.3;}
+	}
+	div#guang1
+	{ 
+		position:absolute; 
+		left:-20px;
+		top:417px;
+		-webkit-transform-origin:center bottom;
+		-webkit-animation:flash1 1s 0.2s infinite ease-in-out alternate both;
+	}
+	
+	div#guang2
+	{ 
+		position:absolute; 
+		left:9px;
+		top:380px;
+		-webkit-transform-origin:center bottom;
+		-webkit-animation:flash2 2s 0.4s infinite ease-in-out alternate both;
+	}
+	
+	div#guang3
+	{ 
+		position:absolute; 
+		left:29px;
+		top:343px;
+		-webkit-transform-origin:center bottom;
+		-webkit-animation:flash3 5s 0.1s infinite ease-in-out alternate both;
+	}
+	div#guang4
+	{ 
+		position:absolute; 
+		left:46px;
+		top:303px;
+		-webkit-transform-origin:center bottom;
+		-webkit-animation:flash1 2s 0.4s infinite ease-in-out alternate both;
+	}
+	div#guang5
+	{ 
+		position:absolute; 
+		left:55px;
+		top:273px;
+		-webkit-transform-origin:center bottom;
+		-webkit-animation:flash2 3s 0.2s infinite ease-in-out alternate both;
+	}
+	div#guang6
+	{ 
+		position:absolute; 
+		left:67px;
+		top:225px;
+		-webkit-transform-origin:center bottom;
+		-webkit-animation:flash3 3s 0.5s infinite ease-in-out alternate both;
+	}
+	div#guang7
+	{ 
+		position:absolute; 
+		left:71px;
+		top:191px;
+		-webkit-transform-origin:center bottom;
+		-webkit-animation:flash1 2.3s 0.1s infinite ease-in-out alternate both;
+	}
+	div#guang8
+	{ 
+		position:absolute; 
+		left:83px;
+		top:142px;
+		-webkit-transform-origin:center bottom;
+		-webkit-animation:flash2 4s 0.8s infinite ease-in-out alternate both;
+	}
+	div#deng1
+	{ 
+		position:absolute; 
+		left:301px;
+		top:322px;				
+		-webkit-animation:fadeOutIn 12s 0s infinite ease-in-out normal both;
+	}
+	@-webkit-keyframes fadeOutIn{
+		0%{opacity:1;}
+		35%{opacity:1;}
+		45%{opacity:0;}
+		100%{opacity:0;}
+	}
+	
+	div#deng2
+	{ 
+		position:absolute; 
+		left:301px;
+		top:322px;				
+		-webkit-animation:fadeInOut 12s 0s infinite ease-in-out normal both;
+	}
+	@-webkit-keyframes fadeInOut{
+		0%{opacity:0;}
+		35%{opacity:0;}
+		45%{opacity:1;}
+		100%{opacity:1;}
+	}
+	
+	div#foot{   
+        position:fixed; 
+		width:500px;
+		left:320px;
+		bottom:20px;
+    } 	
+  
+    div#relative{   
+        position:relative;   
+        left:100px;   
+        top:0px;   
+    }   
+  
+    div#static{   
+        background-color:#bbb;   
+		top:20;
+		left:30px;
+        position:static;   
+    }   
+	
+    -->  
+</style>  
+<script>
+	gSizeMode = 'bodywidth';
+	gAnimateMode = 'up';
+	gSound = 'sound/youmeiyou.mp3';
+	gColor = '#FFCC00';
+	gTextAreaLeft = 0.38;
+	gTextAreaTop = 0.1;
+	gTextAreaWidth = 0.6;
+	gTextAreaHeight = 0.4;
+	gSpeed = 300;		
+	gCardTextNoWrap ='';
+	gCardText =desc = '' || '<?=$note1?>';
+ share_url='';
+	
+	gShareLogo = '<?=$page_url?>img/home/<?=$id?>.jpg';
+    gShareUrl = '<?=$page_url?><?=$id?>.php?note=<?=urlencode($note)?>';
+    gShareTitle = '送给你';
+    ShareDesc = '<?=$note?>';
+	
+	
+	//做卡页面参数
+	gcardid = 2014;
+	goptiontxt = "xinqing";
+	</script>
+
+<script src="../public/js/showcard_nosound.js?d=1"></script>
+<script src="../public/js/showcard_weixin.js?d=1"></script>
+<div id="audiocontainer"></div>
+<div id="cardsound" style="position: fixed; left: 440px; top: 40px; z-index: 5000; visibility: visible;"></div>
+ 
+ 
+
+<script>
+function showTxt()
+		{
+			var text = document.getElementById("textsuper");
+			text.style.display = "block";
+			onLoad();
+		}
+</script>
+ </head>  
+
+
+
+
+<body onLoad="showTxt();">  
+    <div id="content">  
+		<div id="bg2">
+			<img src="img/2014_files/2014_3.jpg">
+		</div> 
+		<div id="bg1">
+			<img src="img/2014_files/2014_2.jpg">
+		</div> 	
+        <div id="bg">
+			<img src="img/2014_files/2014_1.jpg">
+		</div>  
+		
+	
+		<div id="guang1">
+			<img src="img/2014_files/2014_guang1.png">
+		</div>  
+		<div id="guang2">
+			<img src="img/2014_files/2014_guang2.png">
+		</div> 
+		<div id="guang3">
+			<img src="img/2014_files/2014_guang1.png">
+		</div> 
+		<div id="guang4">
+			<img src="img/2014_files/2014_guang2.png">
+		</div> 
+		<div id="guang5">
+			<img src="img/2014_files/2014_guang1.png">
+		</div> 
+		<div id="guang6">
+			<img src="img/2014_files/2014_guang1.png">
+		</div> 
+		<div id="guang7">
+			<img src="img/2014_files/2014_guang2.png">
+		</div> 
+		<div id="guang8">
+			<img src="img/2014_files/2014_guang1.png">
+		</div>
+		<div id="deng1">
+			<img src="img/2014_files/2014_deng1.png">
+		</div>
+		<div id="deng2">
+			<img src="img/2014_files/2014_deng2.png">
+		</div>
+			<div id="stars"></div>
+		<script>
+			starshine();
+		</script>
+		<div id="container" onClick="clickbg();" style="left:0%;top:0%;">
+			<div id="leafContainer"></div>
+		</div>		
+
+		
+	
+
+
+<div id="ruler" style="width:100%;height:0"></div>
+<div id="textsuper" style="position:absolute;top:-1000;left:-1000;overflow-x:hidden;overflow-y:hidden;z-index:4000">
+	<div id="textsub" style='color:black;position:relative;font-size:20pt;text-align:left;line-height:42pt' >
+		<b id="textcontent">
+        </b>
+    </div>
+</div>
+<script type="text/javascript">	
+var imgUrl = gShareLogo;
+var lineLink = gShareUrl;
+var descContent = ShareDesc;
+var shareTitle = gShareTitle;
+var appid = '';
+function shareFriend() {
+			playbksound();
+            WeixinJSBridge.invoke('sendAppMessage',{
+                "appid": appid,
+                "img_url": imgUrl,
+                "img_width": "200",
+                "img_height": "200",
+                "link": lineLink,
+                "desc": descContent,
+                "title": shareTitle
+            }, function(res) {
+                location.href = "<?=$weixin_url?>";
+            })
+        }
+        function shareTimeline() {
+            WeixinJSBridge.invoke('shareTimeline',{
+                "img_url": imgUrl,
+                "img_width": "200",
+                "img_height": "200",
+                "link": lineLink,
+                "desc": descContent,
+                "title": shareTitle
+            }, function(res) {
+                   location.href = "<?=$weixin_url?>";
+            });
+        }
+        function shareWeibo() {
+            WeixinJSBridge.invoke('shareWeibo',{
+                "content": descContent,
+                "url": lineLink,
+            }, function(res) {
+                location.href = "<?=$weixin_url?>";
+            });
+        }
+        // 当微信内置浏览器完成内部初始化后会触发WeixinJSBridgeReady事件。
+        document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+            // 发送给好友
+            WeixinJSBridge.on('menu:share:appmessage', function(argv){
+                shareFriend();
+            });
+            // 分享到朋友圈
+            WeixinJSBridge.on('menu:share:timeline', function(argv){
+                shareTimeline();
+            });
+            // 分享到微博
+            WeixinJSBridge.on('menu:share:weibo', function(argv){
+                shareWeibo();
+            });
+        }, false); 
+</script>
+ <?
+require ('footer.php');
+?>

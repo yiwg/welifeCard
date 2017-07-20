@@ -1,0 +1,384 @@
+<?
+require ('config.php');
+$id='02105';
+if (!$note) {
+	$note="寒气从天降，贺卡祝福来送上：送你一件小棉袄，温暖过冬无烦恼；送你一碗红枣汤，驱寒保暖保健康；送你一粒幸运果，生活幸福又快乐；送你一杯甜蜜酒，阖家安康乐融融！冬日快乐！";
+	$note1="寒气从天降，<br>贺卡祝福来送上：<br>送你一件小棉袄，<br>温暖过冬无烦恼；<br>送你一碗红枣汤，<br>驱寒保暖保健康；<br>送你一粒幸运果，<br>生活幸福又快乐；<br>送你一杯甜蜜酒，<br>阖家安康乐融融！<br>冬日快乐！<br>";
+} else {
+	if (strlen($from)>=6) {
+	  $note=urldecode($note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	} else {
+	  $note=urldecode($note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	}
+	if ($t=="ss") {
+	  $note=iconv("utf-8","gb2312",$note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	}
+}
+?>
+<html>
+  <head>
+    <title>送给你</title>
+    	    <meta http-equiv="imagetoolbar" content="no">
+    <meta name="viewport" content="width=500px, height=750px,initial-scale=0.64"/>
+    <meta http-equiv="content-type" content="text/html; charset=gb2312">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+        
+    <style type="text/css">
+      body{   
+        -webkit-touch-callout: none; 
+        -webkit-text-size-adjust: none;
+        margin:0 auto;       
+        overflow:hidden;   
+        position:relative;      
+        background:black;
+      }   
+      
+      div#content{
+        position:relative;   
+        border:1px solid #000; 
+        width:500px;    
+        height:750px;
+        margin:0 auto; 
+        top:0px;    
+        overflow:hidden;   
+        clear:both;
+      }
+    </style>
+
+
+    <style type="text/css">
+  		#psNzCBdqt-an-obj-1 {
+  			position:absolute;
+  			-webkit-transform: translate3d(0px, 1px, 0px);
+  			width: 500px;
+  			height: 750px;
+  			top:0; left:0;
+  		}
+  
+  		#psNzCBdqt-an-obj-2 {
+  			position:absolute;
+  			-webkit-transform: translate3d(136px, -141px, 0px);
+  			width: 260px;
+  			height: 117px;
+  			top:0; left:0;
+  			-webkit-animation: ani-psNzCBdqt-an-obj-2-0 2.1864s 0.0339s 1 linear normal both ;
+  		}
+  
+  		@-webkit-keyframes ani-psNzCBdqt-an-obj-2-0 {
+  			0% {
+  				-webkit-transform: translate3d(136px, -141px, 0px);
+  			}
+  			100% {
+  				-webkit-transform: translate3d(134px, 59px, 0px);
+  			}
+  		}
+  
+  		#psNzCBdqt-an-obj-3 {
+  			position:absolute;
+  			-webkit-transform: translate3d(-426px, -9px, 0px);
+  			width: 20px;
+  			height: 20px;
+  			top:0; left:0;
+  			-webkit-animation: ani-psNzCBdqt-an-obj-3-0 4.1724s 1.2542s 1 linear normal both ;
+  		}
+  
+  		@-webkit-keyframes ani-psNzCBdqt-an-obj-3-0 {
+  			0% {
+  				-webkit-transform: translate3d(-426px, -9px, 0px);
+  				-webkit-animation-timing-function:linear;
+  			}
+  			100% {
+  				-webkit-transform: translate3d(-56px, -9px, 0px);
+  				-webkit-animation-timing-function:ease;
+  			}
+  		}
+  
+  		#psNzCBdqt-an-obj-4 {
+  			position:absolute;
+  			-webkit-transform: translate3d(310px, 18px, 0px);
+  			width: 148px;
+  			height: 98px;
+  			top:0; left:0;
+  			-webkit-animation: ani-psNzCBdqt-an-obj-4-0 1.1017s 0.1356s infinite linear alternate both ;
+  		}
+  
+  		@-webkit-keyframes ani-psNzCBdqt-an-obj-4-0 {
+  			0% {
+  				-webkit-transform: translate3d(310px, 18px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  				-webkit-animation-timing-function:linear;
+  				-webkit-transform-origin: 50% 50%;
+  			}
+  			100% {
+  				-webkit-transform: translate3d(310px, 18px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(5deg);
+  				-webkit-animation-timing-function:linear;
+  				-webkit-transform-origin: -1.35% -1.02%;
+  			}
+  		}
+  
+  		#psNzCBdqt-an-obj-5 {
+  			position:absolute;
+  			-webkit-transform: translate3d(84px, 139px, 0px);
+  			width: 48px;
+  			height: 144px;
+  			top:0; left:0;
+  			-webkit-animation: ani-psNzCBdqt-an-obj-5-0 1.1508s 0.4407s infinite linear alternate both ;
+  		}
+  
+  		@-webkit-keyframes ani-psNzCBdqt-an-obj-5-0 {
+  			0% {
+  				-webkit-transform: translate3d(84px, 139px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(-6deg);
+  				-webkit-transform-origin: 70.83% 0%;
+  				-webkit-animation-timing-function:linear;
+  			}
+  			100% {
+  				-webkit-transform: translate3d(84px, 139px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  				-webkit-transform-origin: 50% 50%;
+  				-webkit-animation-timing-function:ease;
+  			}
+  		}
+  
+  		#psNzCBdqt-an-obj-6 {
+  			position:absolute;
+  			-webkit-transform: translate3d(224px, 45px, 0px);
+  			width: 101px;
+  			height: 190px;
+  			top:0; left:0;
+  			-webkit-transform-origin: -39.1% -0.53%;
+  			-webkit-animation: ani-psNzCBdqt-an-obj-6-0 1.2034s 0.0339s infinite linear alternate both ;
+  		}
+  
+  		@-webkit-keyframes ani-psNzCBdqt-an-obj-6-0 {
+  			0% {
+  				-webkit-transform: translate3d(224px, 45px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(-3.4deg);
+  				-webkit-transform-origin: 8.42% 1.58%;
+  				-webkit-animation-timing-function:linear;
+  			}
+  			100% {
+  				-webkit-transform: translate3d(224px, 45px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(-11deg);
+  				-webkit-transform-origin: 8.42% 1.58%;
+  				-webkit-animation-timing-function:ease;
+  			}
+  		}
+  
+  		#psNzCBdqt-an-obj-7 {
+  			position:absolute;
+  			-webkit-transform: translate3d(190px, 59px, 0px);
+  			width: 79px;
+  			height: 176px;
+  			top:0; left:0;
+  			-webkit-animation: ani-psNzCBdqt-an-obj-7-0 1.2034s 0.4746s infinite linear alternate both ;
+  		}
+  
+  		@-webkit-keyframes ani-psNzCBdqt-an-obj-7-0 {
+  			0% {
+  				-webkit-transform: translate3d(190px, 59px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(7.5deg);
+  				-webkit-transform-origin: 6.96% 4.55%;
+  				-webkit-animation-timing-function:linear;
+  			}
+  			100% {
+  				-webkit-transform: translate3d(190px, 59px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  				-webkit-transform-origin: 50% 50%;
+  				-webkit-animation-timing-function:ease;
+  			}
+  		}
+  
+  		#psNzCBdqt-an-obj-8 {
+  			position:absolute;
+  			-webkit-transform: translate3d(-78px, 9px, 0px);
+  			width: 438px;
+  			height: 387px;
+  			top:0; left:0;
+  		}
+  
+  		#psNzCBdqt-an-obj-9 {
+  			position:absolute;
+  			-webkit-transform: translate3d(496px, 247px, 0px);
+  			width: 375px;
+  			height: 196px;
+  			top:0; left:0;
+  			-webkit-animation: ani-psNzCBdqt-an-obj-9-0 4.1356s 4.322s 1 linear normal both ;
+  		}
+  
+  		@-webkit-keyframes ani-psNzCBdqt-an-obj-9-0 {
+  			0% {
+  				-webkit-transform: translate3d(496px, 247px, 0px);
+  				-webkit-animation-timing-function:linear;
+  				-webkit-transform-origin: 50% 50%;
+  			}
+  			100% {
+  				-webkit-transform: translate3d(264px, 273px, 0px);
+  				-webkit-animation-timing-function:ease;
+  				-webkit-transform-origin: 99.07% 70.41%;
+  			}
+  		}
+    </style>
+    <script>
+      gTextSizeMode = 'bodywidth';
+      gTextAnimateMode = 'up';
+      gTextColor = '#FFFFFF';
+  		gTextAreaLeft = 0.36;
+  		gTextAreaTop = 0.93;
+  		gTextAreaWidth = 0.8;
+  		gTextAreaHeight = 0.4;		
+      gTextSpeed = 25;  
+      gTextDesc ='<?=$note1?>';
+      gTextFont = 'FZZHYJW';
+      
+      gSoundUrl = 'sound/xuehuadekuaile2.mp3';
+
+      gShareLogo = '<?=$page_url?>img/home/<?=$id?>.jpg';
+      gShareUrl = '<?=$page_url?><?=$id?>.php?note=<?=urlencode($note)?>';
+      gShareTitle = '送给你';
+      gShareDesc = '<?=$note?>';
+    </script>
+  </head>
+
+  <body style="margin:0; height: 100%" onload="showText();">  
+    <div id="content">
+		<div id="psNzCBdqt-an-obj-1"><img height="750" width="500" src="img/02105/bg.jpg"></div>
+		<div id="psNzCBdqt-an-obj-2"><img height="117" width="260" src="img/02105/1.png"></div>
+		<div id="psNzCBdqt-an-obj-3">
+  		<div id="psNzCBdqt-an-obj-4"><img height="98" width="148" src="img/02105/5.png"></div>
+  		<div id="psNzCBdqt-an-obj-5"><img height="144" width="48" src="img/02105/2.png"></div>
+  		<div id="psNzCBdqt-an-obj-6"><img height="190" width="101" src="img/02105/4.png"></div>
+  		<div id="psNzCBdqt-an-obj-7"><img height="176" width="79" src="img/02105/3.png"></div>
+  		<div id="psNzCBdqt-an-obj-8"><img height="387" width="438" src="img/02105/6.png"></div>
+		</div>
+		<div id="psNzCBdqt-an-obj-9"><img height="196" width="375" src="img/02105/7.png"></div>
+            <div id="ruler" style="width:100%;height:0"></div>
+      <div id="audiocontainer"> </div>
+      
+      <div id="textsuper" style="position:absolute;top:-1000;left:-1000;overflow-x:hidden;overflow-y:hidden;z-index:2000" >
+        <div id="textsub" style="color:black;position:relative;font-size:21pt;text-align:left;line-height:40pt;top:2000px" >
+        </div>
+      </div>
+
+      <script src="js/sa_card.js?d=6" type="text/javascript"></script>
+      
+        <style>
+#card_menu {
+  z-index: 8000; 
+  background-color: transparent;
+  background-size: 101px 101px!important;
+  position: fixed;
+  left: 0px;
+  bottom: 31px;
+  height: 101px;
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+#card_menu.fade { 
+  -webkit-animation: menu_fade_animation 5s infinite linear; 
+  -moz-animation: menu_fade_animation 5s infinite linear; 
+  -ms-animation: menu_fade_animation 5s infinite linear; 
+  -o-animation: menu_fade_animation 5s infinite linear; 
+  animation: menu_fade_animation 5s infinite linear;
+}
+
+#card_menu.hide {
+  bottom: -60px!important; opacity: 0; 
+  transition: all 666ms;
+  -moz-transition: all 666ms;
+  -webkit-transition: all 666ms;
+  -o-transition: all 666ms; 
+} 
+
+@-webkit-keyframes menu_fade_animation{ 0%{ opacity: 0.8; } 50%{ opacity: 0.2; } 100%{ opacity: 0.8; } } 
+@-moz-keyframes menu_fade_animation{ 0%{ opacity: 0.8; } 50%{ opacity: 0.2; } 100%{ opacity: 0.8; } } 
+@-ms-keyframes menu_fade_animation{ 0%{ opacity: 0; } 50%{ opacity: 1; } 100%{ opacity: 0; } } 
+@-o-keyframes menu_fade_animation{ 0%{ opacity: 0.8; } 50%{ opacity: 0.2; } 100%{ opacity: 0.8; } } 
+@keyframes menu_fade_animation{ 0%{ opacity: 0.8; } 50%{ opacity: 0.2; } 100%{ opacity: 0.8; } } 
+
+.menu_scale_animation { 
+  -webkit-animation: menu_scale_animation 910ms infinite linear; 
+  -moz-animation: menu_scale_animation 910ms infinite linear; 
+  -ms-animation: menu_scale_animation 910ms infinite linear; 
+  -o-animation: menu_scale_animation 910ms infinite linear; 
+  animation: menu_scale_animation 910ms infinite linear; 
+} 
+@-webkit-keyframes menu_scale_animation{ 0%{ -webkit-transform : scale(0.9); opacity: 0.6; } 100%{ -webkit-transform : scale(1.2); opacity: 0; } } 
+@-moz-keyframes menu_scale_animation{ 0%{ -moz-transform : scale(0.9); opacity: 0.6; } 100%{ -moz-transform : scale(1.2); opacity: 0; } } 
+@-ms-keyframes menu_scale_animation{ 0%{ -ms-transform : scale(0.9); opacity: 0.6; } 100%{ -ms-transform : scale(1.2); opacity: 0; } } 
+@-o-keyframes menu_scale_animation{ 0%{ -o-transform : scale(0.9); opacity: 0.6; } 100%{ -o-transform : scale(1.2); opacity: 0; } } 
+ 
+.menu_btn {
+  border-radius: 100%;
+  display: inline-block;
+  width: 101px;
+  height: 101px;
+  bottom: 31px;
+  margin: 0 8px;
+}
+        </style> 
+
+      <div id="card_menu" class="fade"> 
+              <div onclick="Customize();" class="menu_btn" style="background: url(<?=$page_url?>img/ext/menu_customize.png);background-size:contain;"></div> 
+        <div onclick="Share();" class="menu_btn" style="background: url(<?=$page_url?>img/ext/menu_share.png);background-size:contain;"></div> 
+        <div onclick="GetMore();" class="menu_btn" style="background: url(<?=$page_url?>img/ext/menu_more.png);background-size:contain;"></div> 
+            </div>
+      <div id="shareTips" style="background-color: rgba(0, 0, 0, 0.7); z-index: 8100;display: none">
+        <img class="send_arrow" src="<?=$page_url?>img/ext/share_tips.png"> 
+      </div>
+      <style> 
+        #shareTips{
+          position:absolute; 
+          top:0; 
+          left:0; 
+          height:0; 
+          bottom:0; 
+          width:100%; 
+          height:100%; 
+          background:rgba(0, 0, 0, 0.70); 
+          overflow:hidden;
+        }
+        #shareTips img{
+          position:absolute; 
+          top:5px; 
+          right:5px; 
+          width:284px; 
+          height:110px;
+        } 
+      </style> 
+<script>
+function Customize()
+{
+  id('card_menu').className = "hide";
+  setTimeout(function(){location.href = "<?=$page_url?>editcard.php?id=<?=$id?>"}, 600);
+}
+
+function Share()
+{
+  id('card_menu').className = "hide";
+  id('shareTips').style.display="block";
+  id('shareTips').onclick = function(){
+    id('shareTips').style.display="none";
+    id('shareTips').onclick = function(){};
+    id('card_menu').className = "fade";
+  }    
+}
+
+function Follow()
+{
+  location.href = '<?=$weixin_url?>';
+}
+
+function GetMore()
+{
+  location.href = '<?=$page_url?>index.php';
+}
+
+</script>    </div>
+  </body>
+</html>

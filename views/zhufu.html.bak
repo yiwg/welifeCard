@@ -1,0 +1,167 @@
+<?
+require ('config.php');
+?>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta name="viewport" content="width=device-width"/>
+<meta name="MobileOptimized" content="320"/>
+<title>温馨祝福</title>
+
+<link rel="stylesheet" type="text/css" href="css/homestyle.css" media="all">
+
+
+</head>
+
+<body class="pic">
+
+<nav class="site all">
+	<a  href="index.php">最新</a>
+  <a href="love.php">爱情</a>
+  <a href="show3.php">心情</a>
+  <a href="greeting.php">问候</a>
+  <a href="birthday.php">生日</a>
+  
+</nav>
+<nav class="site all">
+<a href="zhufu.php" style="background:#ff9900">祝福</a>
+<a href="gaoguai.php">搞怪</a>
+<a  href="http://mp.weixin.qq.com/s?__biz=MzA3NDkxNTkzOQ==&mid=201251435&idx=1&sn=09922467549ebd8976c94ec06302e069#rd">关注我领礼物</a>
+</nav>
+
+
+<section class="cnl">
+<h3 class="h ht2">
+	<em>温馨祝福</em>
+	<p align="right"> <a style="color:color:#3783c6;font-size:12pt;" href="index.php">更多</a></p>
+</h3>
+<section class="pl pl_c2">
+	<a href="1020.php" class="h4">
+
+		<i class="img"><img src="img/home/1035.jpg" width="80" height="80"></i>
+
+<p>雨中禅意</p><p>编号:1035</p></a>
+
+	<a href="1034.php" class="h4">
+
+		<i class="img"><img src="img/home/1034.jpg" width="80" height="80"></i>
+
+<p>后会无期</p><p>编号:1034</p></a>
+	<a href="1032.php" class="h4">
+
+		<i class="img"><img src="img/home/1032.jpg" width="80" height="80"></i>
+
+<p>幸福漂流瓶</p><p>编号:1032</p>
+</a>
+
+</section>
+<section class="pl pl_c2">
+
+	<a href="1022.php" class="h4">
+
+		<i class="img"><img src="img/home/1022.jpg" width="80" height="80"></i>
+
+<p>放松心情</p><p>编号:1022</p></a>
+
+	<a href="1026.php" class="h4">
+
+			<i class="img"><img src="img/home/1026.jpg" width="80" height="80"></i>
+
+<p>出去走走</p><p>编号:1026</p></a>
+
+	<a href="1029.php" class="h4">
+
+		<i class="img"><img src="img/home/1029.jpg" width="80" height="80"></i>
+
+<p>四叶草的祝福</p><p>编号:1029</p></a>
+
+</section>
+		
+<section class="pl pl_c2">
+
+	<a href="1020.php" class="h4">
+
+			<i class="img"><img src="img/home/1020.jpg" width="80" height="80"></i>
+
+<p>春雨悠然</p><p>编号:1020</p></a>
+
+	<a href="1019.php" class="h4">
+
+			<i class="img"><img src="img/home/1019.jpg" width="80" height="80"></i>
+
+<p>梦想天空</p><p>编号:1019</p></a>
+
+	<a href="1021.php" class="h4">
+
+			<i class="img"><img src="img/home/1021.jpg" width="80" height="80"></i>
+
+<p>共爱地球</p><p>编号:1021</p>
+</a>
+
+</section>
+
+<section class="pl pl_c2">
+	
+	
+	<a href="1008.php" class="h4">
+	<i class="img">
+		<img src="img/home/1008.jpg" width="90" height="80">
+		<p>有空常联系</p><p>编号：1008</p>
+	</i>
+</a>
+
+	
+	<a href="5006.php" class="h4">
+	<i class="img">
+		<img src="img/home/5006.jpg" width="80" height="80">
+		<p>祝福</p><p style="color:red">编号：5006</p>
+	</i>
+</a>
+<a href="1015.php" class="h4">
+	<i class="img">
+		<img src="img/home/1015.jpg" width="90" height="80">
+		<p>周末愉快</p><p>编号：1015</p>
+	</i>
+</a>
+</section>
+
+<section class="pl pl_c2">
+
+	<a href="1010.php" class="h4">
+	<i class="img">
+		<img src="img/home/1010.jpg" width="90" height="80">
+		<p>落叶知秋</p><p>编号：1010</p>
+	</i>
+</a>
+	<a href="1005.php" class="h4">
+	<i class="img">
+		<img src="img/home/1005.jpg" width="90" height="80">
+		<p>秋的问候</p><p>编号：1005</p>
+	</i>
+</a>
+	
+
+
+	<a href="1016.php" class="h4">
+	<i class="img">
+		<img src="img/home/1016.jpg" width="90" height="80">
+		<p>冬日赏景</p><p>编号：1016</p>
+	</i>
+</a>
+	
+</section>
+
+    
+</section>
+		
+</section>
+
+<section class="cnl">
+
+<h3 class="h ht2">
+	<em>更多微卡敬请期待~O(∩_∩)O~</em>
+  </h3>
+  
+</section>
+
+</body>
+</html>

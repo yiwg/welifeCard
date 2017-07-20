@@ -1,0 +1,391 @@
+<?
+require ('config.php');
+$id='03001';
+if (!$note) {
+	$note="只要你回个头，你就能看到我，一生为期。";
+	$note1="只要你回个头，<br>你就能看到我，<br>一生为期。<br>";
+} else {
+	if (strlen($from)>=6) {
+	  $note=urldecode($note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	} else {
+	  $note=urldecode($note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	}
+	if ($t=="ss") {
+	  $note=iconv("utf-8","gb2312",$note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	}
+}
+?>
+<html>
+  <head>
+    <title>送给你</title>
+    <meta http-equiv="imagetoolbar" content="no">
+    <meta name="viewport" content="width=500px, height=750px,initial-scale=0.64"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+        
+    <style type="text/css">
+      body{   
+        -webkit-touch-callout: none; 
+        -webkit-text-size-adjust: none;
+        margin:0 auto;       
+        overflow:hidden;   
+        position:relative;      
+        background:black;
+      }   
+      
+      div#content{
+        position:relative;   
+        border:1px solid #000; 
+        width:500px;    
+        height:750px;
+        margin:0 auto; 
+        top:0px;    
+        overflow:hidden;   
+        clear:both;
+      }
+    </style>
+
+
+    <style>
+    	@-webkit-keyframes heart1move
+    	{
+    		0%{-webkit-transform:translate(0px,0px)  scale(0.1,0.1);opacity:0;}
+    		33%{-webkit-transform:translate(-120px,-100px) scale(0.25,0.25);opacity:0.3}			
+    		66%{-webkit-transform:translate(80px,-200px) scale(0.5,0.5);opacity:0.6}
+    		100%{-webkit-transform:translate(-70px,-170px) scale(0.8,0.8);opacity:0.8}
+    	} 
+    	
+    	@-webkit-keyframes heart2move
+    	{
+    		0%	{-webkit-transform:translate(20px,-20px);}
+    		25% {-webkit-transform:translate(-70px,-180px);}
+    		50% {-webkit-transform:translate(20px,-360px);}
+    		85% {-webkit-transform:translate(-80px,-720px);}		
+    		100% {-webkit-transform:translate(-40px,-960px);opacity:0.5;}
+    	}
+    	@-webkit-keyframes heart3move
+    	{
+    		0%	{-webkit-transform:translate(-70px,-150px);}
+    		25% {-webkit-transform:translate(-30px,-300px);}
+    		50% {-webkit-transform:translate(70px,-450px);}
+    		85% {-webkit-transform:translate(-70px,-600px);}		
+    		100% {-webkit-transform:translate(-100px,-750px);opacity:0.5;}
+    	}
+    	@-webkit-keyframes heart4move
+    	{
+    		0%	{-webkit-transform:translate(50px,-200px);}
+    		25% {-webkit-transform:translate(-80px,-400px);}
+    		50% {-webkit-transform:translate(120px,-600px);}
+    		85% {-webkit-transform:translate(-150px,-800px);}		
+    		100% {-webkit-transform:translate(180px,-1000px);opacity:0.5;}
+    	}
+    	@-webkit-keyframes heart5move
+    	{
+    		0%	{-webkit-transform:translate(30px,-130px);}
+    		25% {-webkit-transform:translate(60px,-260px);}
+    		50% {-webkit-transform:translate(90px,-390px);}
+    		85% {-webkit-transform:translate(120px,-520px);}		
+    		100% {-webkit-transform:translate(150px,-650px);opacity:0.5;}
+    	}
+    	@-webkit-keyframes heart6move
+    	{
+    		0%	{-webkit-transform:translate(-50px,-100px);}
+    		25% {-webkit-transform:translate(0px,-200px);}
+    		50% {-webkit-transform:translate(100px,-300px);}
+    		85% {-webkit-transform:translate(-20px,-400px);}		
+    		100% {-webkit-transform:translate(-70px,-600px);opacity:0.5;}
+    	} 
+    	@-webkit-keyframes ballx
+    	{
+    		0%	{opacity:0}
+    		100% {opacity:1;}
+    	} 
+    	
+    	@-webkit-keyframes s2
+    	{
+    		0%  {opacity:0;}
+    		60% {opacity:1;}
+    		100% {opacity:0; scale(2,2)}
+    	}	
+    	
+    	@-webkit-keyframes buttonmove
+    	{
+    		0% {left: 0px;top: 0px;opacity: 0}
+    		50% {left: 0px;top: 50px;opacity: 1}
+    		100% {left: 0px;top: 0px;opacity: 0}
+    	}
+    	@-webkit-keyframes bg1fadeOut{
+    		0%{opacity:1;}
+    		33%{opacity:0;}
+    		100%{opacity:0;}
+    	}
+    	@-webkit-keyframes bg2fadeOut{
+    		0%{opacity:0;}
+    		33%{opacity:1;}
+    		66%{opacity:1;}
+    		100%{opacity:0;}
+    	}
+    </style>
+    <script>
+      gTextSizeMode = 'bodywidth';
+      gTextAnimateMode = 'print';
+      gTextColor = '#FFFFFF';
+  		gTextAreaLeft = 0.30;
+  		gTextAreaTop = 0.66;
+  		gTextAreaWidth = 0.7;
+  		gTextAreaHeight = 0.3;
+      gTextSpeed = 550;  
+      gTextDesc ='<?=$note1?>';
+      
+      gSoundUrl = 'sound/yinweiaiqing.mp3';
+
+      gShareLogo = 'img/home/03001.jpg';
+      gShareUrl = '../<?=$id?>.php?note=<?=urlencode($note)?>';
+      gShareTitle = '送给你';
+      gShareDesc = '<?=$note?>';
+    </script>
+  </head>
+
+  <body style="margin:0; height: 100%">  
+    <div id="content">
+	<script>
+		document.body.ontouchstart = on_touch_start;
+		function on_touch_start()
+		{
+			x = event.changedTouches[0].pageX;
+			y = event.changedTouches[0].pageY;
+
+			if(x >= 144 && x <= 500 && y >= 554 && y <= 835)
+			{
+				fun0();				
+				event.preventDefault();
+			}
+		}
+		function fun0()
+		{
+			for(i=0;i<2;i++)
+			{
+				cancel();
+			}
+			document.getElementById("ball").style.cssText +="-webkit-animation:ballx 2s ease-in-out 0s 1 normal forwards ;";
+			document.getElementById("ball").addEventListener('webkitAnimationEnd',fun1,false);
+		}		
+		function fun1()
+		{			
+			var j = 0.1 ,
+				n = 0;
+				
+			document.getElementById("heart1").addEventListener('webkitAnimationEnd',showText,false);
+			document.getElementById('top').style.webkitTransform = 'translate(0px,-300px)';
+			document.getElementById('ball').style.webkitTransform = 'translate(0px,-300px)';			
+			document.getElementById("heart1").style.cssText +="-webkit-animation:heart1move 5s linear 3s 1 alternate forwards;";
+
+			for(i=2;i<7;i++)
+			{
+				
+				document.getElementById("heart" + i).style.cssText += "-webkit-animation:heart" + i + "move 5s infinite linear " + j + "s normal forwards;";	
+				j+=1;
+			}
+
+			document.getElementById('bg1').style.cssText +="-webkit-animation:bg1fadeOut 12s linear 0s infinite alternate;";
+			document.getElementById('bg2').style.cssText +="-webkit-animation:bg2fadeOut 12s linear 0s infinite alternate;";
+			
+			for(m=1;m<6;m++)
+			{
+				n+=0.5; 
+				document.getElementById("star" + m).style.cssText += "-webkit-animation:s2 1.2s linear " + n + "s infinite";
+ 			}		
+		}	
+		function cancel()
+		{
+			 document.getElementById("hand").removeChild(document.getElementById("hand").firstChild);
+		}
+		
+	</script>
+		<div>
+    <img id="bg3" src="../img/03001/bg3.jpg" style="position:absolute;top:0px;left:0px;width:100%;height:100%"/>
+    <img id="bg2" src="../img/03001/bg2.jpg" style="position:absolute;top:0px;left:0px;width:100%;height:100%"/>
+    <img id="bg1" src="../img/03001/bg1.jpg" style="position:absolute;top:0px;left:0px;width:100%;height:100%"/>
+    </div>
+		<div id="star1" style="position:absolute;top:-20px;left:-20px;">
+		    <img src="../img/03001/star.png" height="200px" width="300px">
+		</div>
+		<div id="star2" style="position:absolute;top:50px;left:265px;">
+			<img src="../img/03001/star.png" height="200px" width="254px">
+		</div>
+		<div id="star3" style="position:absolute;top:254px;left:78px;">
+			<img src="../img/03001/star.png" height="120px" width="180px">
+		</div>	
+		<div id="star4" style="position:absolute;top:190px;left:226px;">
+			<img src="../img/03001/star.png" height="120px" width="180px">
+		</div>
+		<div id="star5" style="position:absolute;top:300px;left:351px;">
+			<img src="../img/03001/star.png" height="80px" width="100px">
+		</div>
+		<div id="heart2" style="position:absolute;top:531px;left:187px;">
+			<img src="../img/03001/heart2.png" height="70px" width="70px">
+		</div>
+		<div id="heart3" style="position:absolute;top:547px;left:195px;">
+			<img src="../img/03001/heart3.png">
+		</div>
+		<div id="heart4" style="position:absolute;top:531px;left:190px;">
+			<img src="../img/03001/heart2.png" height="80px" width="80px">
+		</div>		
+		<div id="heart5" style="position:absolute;top:531px;left:190px;">
+			<img src="../img/03001/heart2.png" height="110px" width="110px">
+		</div>
+		<div id="heart6" style="position:absolute;top:531px;left:190px;">
+			<img src="../img/03001/heart3.png" height="120px" width="120px">
+		</div>
+		<div id="bottom" style="position:absolute;top:492px;left:80px;">
+			<input type="image" name="bottom" src="../img/03001/bottom.png" height="190px">
+		</div>			
+		<div id="top" style="z-index:50;position:absolute;top:414px;left:67px;-webkit-transition:-webkit-transform 5s	ease ;">
+			<input type="image" name="top" src="../img/03001/top.png" height="190px" onclick="fun0()">
+		</div>		
+		<div id="ball" style="position:absolute;top:297px;left:128px;opacity:0;-webkit-transition:-webkit-transform 5s ease;">
+			<img src="../img/03001/ball.png?d=3">
+		</div>
+		<div id="heart1" style="position:absolute;top:375px;left:31px;opacity:0;">
+			<img src="../img/03001/heart.png">
+		</div>
+		<div id="hand" style="z-index:51;position:absolute;top:0px;left:0px;-webkit-animation:buttonmove 1.5s linear 0s infinite;">
+		  <img src="../img/03001/button.png" style="position:absolute;top:351px;left:234;width:50px;height:65px;">
+	  </div>	
+            <div id="ruler" style="width:100%;height:0"></div>
+      <div id="audiocontainer"> </div>
+      
+      <div id="textsuper" style="position:absolute;top:-1000;left:-1000;overflow-x:hidden;overflow-y:hidden;z-index:2000" >
+        <div id="textsub" style="color:black;position:relative;font-size:21pt;text-align:left;line-height:40pt;top:2000px" >
+        </div>
+      </div>
+
+      <script src="js/sa_card.js?d=5" type="text/javascript"></script>
+      
+        <style>
+#card_menu {
+  z-index: 8000; 
+  background-color: transparent;
+  background-size: 101px 101px!important;
+  position: fixed;
+  left: 0px;
+  bottom: 31px;
+  height: 101px;
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+#card_menu.fade { 
+  -webkit-animation: menu_fade_animation 5s infinite linear; 
+  -moz-animation: menu_fade_animation 5s infinite linear; 
+  -ms-animation: menu_fade_animation 5s infinite linear; 
+  -o-animation: menu_fade_animation 5s infinite linear; 
+  animation: menu_fade_animation 5s infinite linear;
+}
+
+#card_menu.hide {
+  bottom: -60px!important; opacity: 0; 
+  transition: all 666ms;
+  -moz-transition: all 666ms;
+  -webkit-transition: all 666ms;
+  -o-transition: all 666ms; 
+} 
+
+@-webkit-keyframes menu_fade_animation{ 0%{ opacity: 0.8; } 50%{ opacity: 0.2; } 100%{ opacity: 0.8; } } 
+@-moz-keyframes menu_fade_animation{ 0%{ opacity: 0.8; } 50%{ opacity: 0.2; } 100%{ opacity: 0.8; } } 
+@-ms-keyframes menu_fade_animation{ 0%{ opacity: 0; } 50%{ opacity: 1; } 100%{ opacity: 0; } } 
+@-o-keyframes menu_fade_animation{ 0%{ opacity: 0.8; } 50%{ opacity: 0.2; } 100%{ opacity: 0.8; } } 
+@keyframes menu_fade_animation{ 0%{ opacity: 0.8; } 50%{ opacity: 0.2; } 100%{ opacity: 0.8; } } 
+
+.menu_scale_animation { 
+  -webkit-animation: menu_scale_animation 910ms infinite linear; 
+  -moz-animation: menu_scale_animation 910ms infinite linear; 
+  -ms-animation: menu_scale_animation 910ms infinite linear; 
+  -o-animation: menu_scale_animation 910ms infinite linear; 
+  animation: menu_scale_animation 910ms infinite linear; 
+} 
+@-webkit-keyframes menu_scale_animation{ 0%{ -webkit-transform : scale(0.9); opacity: 0.6; } 100%{ -webkit-transform : scale(1.2); opacity: 0; } } 
+@-moz-keyframes menu_scale_animation{ 0%{ -moz-transform : scale(0.9); opacity: 0.6; } 100%{ -moz-transform : scale(1.2); opacity: 0; } } 
+@-ms-keyframes menu_scale_animation{ 0%{ -ms-transform : scale(0.9); opacity: 0.6; } 100%{ -ms-transform : scale(1.2); opacity: 0; } } 
+@-o-keyframes menu_scale_animation{ 0%{ -o-transform : scale(0.9); opacity: 0.6; } 100%{ -o-transform : scale(1.2); opacity: 0; } } 
+ 
+.menu_btn {
+  border-radius: 100%;
+  display: inline-block;
+  width: 101px;
+  height: 101px;
+  bottom: 31px;
+  margin: 0 8px;
+}
+        </style> 
+
+      <div id="card_menu" class="fade"> 
+              <div onclick="Customize();" class="menu_btn" style="background: url(../img/ext/menu_customize.png);background-size:contain;"></div> 
+        <div onclick="Share();" class="menu_btn" style="background: url(../img/ext/menu_share.png);background-size:contain;"></div> 
+        <div onclick="GetMore();" class="menu_btn" style="background: url(../img/ext/menu_more.png);background-size:contain;"></div> 
+            </div>
+      <div id="shareTips" style="background-color: rgba(0, 0, 0, 0.7); z-index: 8100;display: none">
+        <img class="send_arrow" src="../img/ext/share_tips.png"> 
+      </div>
+      <style> 
+        #shareTips{
+          position:absolute; 
+          top:0; 
+          left:0; 
+          height:0; 
+          bottom:0; 
+          width:100%; 
+          height:100%; 
+          background:rgba(0, 0, 0, 0.70); 
+          overflow:hidden;
+        }
+        #shareTips img{
+          position:absolute; 
+          top:5px; 
+          right:5px; 
+          width:284px; 
+          height:110px;
+        } 
+      </style> 
+<script>
+function Customize()
+{
+  id('card_menu').className = "hide";
+  setTimeout(function(){location.href = "../editcard.php?id=03001"}, 600);
+}
+
+function Share()
+{
+  id('card_menu').className = "hide";
+  id('shareTips').style.display="block";
+  id('shareTips').onclick = function(){
+    id('shareTips').style.display="none";
+    id('shareTips').onclick = function(){};
+    id('card_menu').className = "fade";
+  }    
+}
+
+function Follow()
+{
+  location.href = '<?=$weixin_url?>';
+}
+
+function GetMore()
+{
+  location.href = '../index.php';
+}
+
+</script>    </div>
+  </body>
+</html>

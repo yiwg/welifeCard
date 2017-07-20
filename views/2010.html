@@ -1,0 +1,184 @@
+<?
+require ('config.php');
+$id='2010';
+if (!$note) {
+	$note="阳光洒在我们脸上，<br>让心被快乐填满，<br>让人生充满笑脸，<br>翅膀在我们自己肩上，<br>朝着梦想的方向飞翔，<br>做一个幸福的人！";
+	$note1="阳光洒在我们脸上，<br>让心被快乐填满，<br>让人生充满笑脸，<br>翅膀在我们自己肩上，<br>朝着梦想的方向飞翔，<br>做一个幸福的人！";
+} else {
+	if (strlen($from)>=6) {
+	  $note=urldecode($note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	} else {
+	  $note=urldecode($note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	}
+	if ($t=="ss") {
+	  $note=iconv("utf-8","gb2312",$note);
+	  $note1=str_replace("，","，<br>",$note);
+	  $note1=str_replace("。","。<br>",$note1);
+	  $note1=str_replace("！","！<br>",$note1);
+	}
+}
+?>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <meta name="viewport" content="width=500px, initial-scale=0.64">
+
+	<title>送给你</title>	
+    <style type="text/css">
+
+	<!--		
+		body
+		{
+			margin: 0;
+		}
+		#fade img {border:0px; position:absolute;}	
+
+		#hd{
+			position:absolute;
+			top:1200px;
+			-webkit-backface-visibility:visible;
+			-webkit-transform-origin:center center;
+			-webkit-animation:fly 10s 0.5s infinite ease normal none ;
+		}
+		
+		@-webkit-keyframes fly{
+			0% {opacity: 0; left:300px;top:1200px;}
+			2%,10%,20%,30%,40%,50%,60%,70%,80%,90%,100%{-webkit-transform:scaleX(0.8);} 
+			5%,15%,25%,35%,45%,55%,65%,75%,85%,95%{-webkit-transform:scaleX(0.3);} 
+			2%{opacity: 1;left:300px;top:800px;} 
+			22%{left:19px;top:600px;} 
+			51%{left:230px;top:366px;} 
+			62%{left:100px;top:200px;} 
+			87%{left:322px;top:66px;} 
+			100%{left:-100px;top:-100px;} 
+		}
+				
+		#yangguang{
+			position:absolute;
+			-webkit-backface-visibility:visible;
+			-webkit-transform-origin:165px 150px;
+			-webkit-animation:sunshine 16s 0s infinite linear normal none ;
+		}
+		
+		@-webkit-keyframes sunshine{
+			0%{-webkit-transform:rotate(0deg);} 
+			100%{-webkit-transform:rotate(360deg);} 
+		}
+		
+		div#foot{   
+        position:fixed; 
+		left:320px;
+		bottom:10px;
+        z-index:4000;
+    } 	
+
+	-->
+
+    </style>	
+	<script>
+		gSizeMode = 'bodywidth';
+		gAnimateMode = 'up';
+		gSound = 'sound/chongjiao.mp3';
+		gColor = '#ffff00';
+		gTextAreaLeft = 0.20;
+		gTextAreaTop = 0.35;
+		gTextAreaWidth = 0.7;
+		gTextAreaHeight = 0.5;
+		gSpeed = 300;		
+		gCardTextNoWrap ='';
+		gCardText ='' ||'<?=$note1?>';
+	share_url='';
+		
+		gShareLogo = '<?=$page_url?>img/home/<?=$id?>.jpg';
+            gShareUrl = '<?=$page_url?><?=$id?>.php?note=<?=urlencode($note)?>';
+            gShareTitle = '送给你';
+            gShareDesc = '<?=$note?>';
+			
+		gcardid = 2010;
+		goptiontxt = "xinqing";
+	</script>
+	
+	<script src="../public/js/showcard_nosound.js?d=1"></script>
+<script src="../public/js/showcard_weixin.js?d=1"></script>
+<div id="audiocontainer"></div>
+<div id="cardsound" style="position: fixed; left: 440px; top: 40px; z-index: 5000; visibility: visible;"></div>
+ 
+ 	<script src="jquery.innerfade1.js" type="text/javascript"></script>
+
+	<script>
+		//需要调用leafinit（）来启动，需要声明外层div，id="container"，还有内层div，id="leafContainer"
+		//参数设置
+		var leafNum = 7;			//落下叶子的数量
+		var kindNum = 2;			//叶子的种类
+		//叶子使用图片地址，数量应与kindNum相同
+		var kindurl = new Array("img/2010_files/2010_p1.png","img/2010_files/2010_p2.png");
+	</script>
+	<script src="img/2010_files/leavesleft.js"></script>
+	<link rel="stylesheet" href="img/2010_files/leavesall.css" type="text/css" media="screen" charset="utf-8">
+	
+	<script>
+	function fade(){
+		//图片淡入淡出
+		$("#fade img:not(:first-child)").hide(); ///隐藏第一幅以外的图片
+		
+		$("#fade").innerfade({
+			animationtype: 'fade',
+			speed: 3500,
+			timeout: 4000,
+			type: 'sequence',
+			autoStop: 'no',
+			reloadWeb: '',
+			replayImgURL: '',
+			replayLeft: '10%',
+			replayTop: '80%',
+			insertFuncPos: 3,
+			insertFunc: function(){
+			   onLoad();
+			},
+			'setTimePicNo':	3,
+			'setPictime': 10000
+		});		
+	}
+	</script>
+</head>
+
+<body  onload="onLoad();"  bgcolor="#000">
+
+	<div style="position:absolute;top:0;left:0;width:500px;z-index:0">
+		<img src="img/2010_files/2010_1.jpg"/>
+	</div>
+	<div style="position:absolute;top:0;left:0;width:500px;z-index:2">
+		<img src="img/2010_files/2010_2.png"/>
+	</div>
+	<div id="yangguang" style="position:absolute;width:500px;top:-165px;left:-150px;z-index:5">
+		<img src="img/2010_files/2010_yangguang.png"/>
+	</div>
+		  
+	<div id="container" style="left:0%;top:0%;z-index:1">
+		<div id="leafContainer"></div>
+	</div>
+	
+	<div id="hd">
+			<img src="img/2010_files/2010_hudie.png" width="76px">
+	</div>
+	<script>
+		leafinit();
+	</script>
+
+ 
+<div id="ruler" style="width:100%;height:0"></div>
+<div id="textsuper" style="position:absolute;top:-1000;left:-1000;overflow-x:hidden;overflow-y:hidden;z-index:4" onclick='javascript:playsound()'>
+	<div id="textsub" style='color:black;line-height:80pt;position:relative;font-size:20pt;text-align:left;line-height:36pt' onclick='javascript:playsound()'>
+		<b id="textcontent">
+        </b>
+    </div>
+</div>
+<?
+require ('footer.php');
+?>
